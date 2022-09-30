@@ -140,6 +140,32 @@
             const database = getDatabase(app);
             console.log("Firebase initialised");
 
+            function generateUniqueKey(email) {
+                var k = email.split('.')[0] + '-' + Math.floor(Math.random()*100000);
+                // Math.floor(Math.random()*100000) => generates a random 5 digit number
+                return k;
+            }
+
+            async function getUniqueKey(email){
+                const dbRef = ref(database);
+                let k1 = "";
+                await get(child(dbRef, `users/` + email.split('.')[0])).then(async (snapshot) => {
+                if (await snapshot.exists()) {
+                    const data = await snapshot.val();
+                    console.log("data from firebase", data);
+                    k1 = await data.key;
+                    console.log("before return", k1);
+                    // return data?.key;
+                } else {
+                    console.log("No data available");
+                }
+                }).catch((error) => {
+                    console.error(error);
+                });
+                console.log("Last line of fn", k1);
+                return k1;
+            }
+
             // Function to select image
             function selectImage() {
                 var e = document.getElementById("profile-pic");
@@ -164,6 +190,9 @@
                 var name =  document.getElementById("s-name").value;
                 // console.log(name);
                 var profilePicUrl = await selectImage();
+                // console.log(profilePicUrl);
+                var uniqueKey = generateUniqueKey(email);
+                // console.log(uniqueKey);
                 createUserWithEmailAndPassword(auth, email, password)
                     .then(async (userCredential) => {
                         // Signed in 
@@ -171,8 +200,11 @@
                         await set(ref(database,'users/' + email.split('.')[0]), {
                             email: email,
                             name: name,
+                            key: uniqueKey,
+                            accountCreated: Date.now(),
                             lastLogin: Date.now(),
                             profilePicUrl: profilePicUrl,
+                            authUsers: Array("sshsrn@gmail.com"),
                         });
                         // Never save password to the database.
                         console.log("Created account Successfully!");
@@ -180,7 +212,9 @@
 
                         var url = await new URL(window.location.href);
                         var newUrl = await new URL('index1.html', url);
-
+                        url.searchParams.append('user', uniqueKey);
+                        // By default, @ is represented as %40
+                        url.href = url.href.replace("%40","@");
                         console.log("Url to open:", newUrl);
                         await window.open(newUrl);
                         console.log(window.location.href);
@@ -202,6 +236,9 @@
                 var password = document.getElementById("l-password").value;
                 // console.log(password);
                 console.log("email", email);
+                // Get unique key from database
+                var uniqueKey = await getUniqueKey(email);
+                console.log("in eventlistener",await uniqueKey);
                 signInWithEmailAndPassword(auth, email, password)
                     .then(async(userCredential) => {
                         // Signed in 
@@ -215,9 +252,13 @@
 
                         var url = await new URL(window.location.href);
                         var newUrl = await new URL('index1.html', url);
-
+                        newUrl.searchParams.append('user', uniqueKey);
+                        // By default, @ is represented as %40
+                        newUrl.href = newUrl.href.replace("%40","@");
+                        // console.log(url.href);
+                        // window.location.href = url.href;
                         console.log("Url to open:", newUrl);
-                        await window.open(newUrl);
+                        await window.open(newUrl.href,"_blank");
                         console.log(window.location.href);
                         await localStorage.setItem("childOpen", true);
                         window.location.replace("index2.html");
