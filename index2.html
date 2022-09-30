@@ -4,18 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Page</title>
+        <link rel="stylesheet" href="index2.css">
+        <title>Document</title>
     </head>
     <body>
-        <h1>This page loads after logging in</h1>
-        <button id="logoutButton">Logout</button>
+        <h1>This page loads in place of signup page when user signs in</h1>
 
+        <!-- Firebase config -->
         <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
             import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-            import { getDatabase, set, ref, update, onValue, get, child } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
-            import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+            import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
@@ -36,43 +36,23 @@
             const app = initializeApp(firebaseConfig);
             const analytics = getAnalytics(app);
             const auth = getAuth();
-            const database = getDatabase(app);
             console.log("Firebase initialised");
+    
             const user = auth.currentUser;
-
-            // Check if user is logged in
             onAuthStateChanged(auth, (user) => {
                 if (user) {
                     // User is signed in, see docs for a list of available properties
                     // https://firebase.google.com/docs/reference/js/firebase.User
                     const uid = user.uid;
-                    // console.log(user);
-                    console.log("User is logged in");
+                    console.log(user);
+                    // When user is signed in, do nothing.
                     // ...
                 } else {
                     // User is signed out
-                    // alert("No user is signed in.");
+                    // ...
                     window.location.replace("index.html");
                 }
             });
-
-            // Logout
-            logoutButton.addEventListener('click', (e) => {
-                signOut(auth)
-                    .then(() => {
-                        // Sign-out successful.
-                        // alert("User signed out!");
-                        // Clear local storage
-                        localStorage.clear()
-                        window.close();
-                    })
-                    .catch((error) => {
-                        // An error happened.
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
-                        alert(errorMessage);
-                    });
-            });
-        </script>
+          </script>
     </body>
 </html>

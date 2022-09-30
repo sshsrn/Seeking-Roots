@@ -143,8 +143,14 @@
                         console.log("User logged in Successfully!");
                         // window.location.replace("index1.html");
 
-                        var url = new URL(window.location.href+"index1.html");
-                        window.open(url);
+                        var url = await new URL(window.location.href);
+                        var newUrl = await new URL('index1.html', url);
+
+                        console.log("Url to open:", newUrl);
+                        await window.open(newUrl);
+                        console.log(window.location.href);
+                        await localStorage.setItem("childOpen", true);
+                        window.location.replace("index2.html");
                     })
                     .catch((error) => {
                         const errorCode = error.code;
@@ -154,14 +160,22 @@
             });
     
             const user = auth.currentUser;
-            onAuthStateChanged(auth, (user) => {
+            onAuthStateChanged(auth, async(user) => {
                 if (user) {
                     // User is signed in, see docs for a list of available properties
                     // https://firebase.google.com/docs/reference/js/firebase.User
                     const uid = user.uid;
                     console.log(user);
+                    console.log("local storage value: ",localStorage.getItem("childOpen"));
+                    if(await localStorage.getItem("childOpen")){
+                        console.log("Tab is open");
+                        window.location.replace("index2.html");
+                    }
+                    else{
+                        console.log("Tab is not open");
+                    }
                     // When user is signed in, do not go to signin signup page
-                    window.location.replace("index1.html");
+                    // window.location.replace("index2.html");
                     // ...
                 } else {
                     // User is signed out
