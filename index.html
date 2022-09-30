@@ -4,62 +4,83 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
         <title>SignUp LogIn page</title>
     </head>
     <body>
-        <center><h1>HTML Structure of SignUp LogIn page</h1></center>
+        
         <!-- Login div -->
-        <div class="loginDiv" id="loginDiv" style="display: none;">
-
-            <div class="loginC">
-                <h2>Login!</h2>
-                <div>
-                    <label for="username"> Enter your Email </label>
-                    <input type="text" id="l-email">
-                </div>
-                <div>
-                    <label for="password"> Enter your Password </label>
-                    <input type="password" required="" id="l-password">
-                </div>
-                <div>
-                    <button id="login" type="submit"> Log In </button>
-                </div>
-                <p>
-                    <span> Not a member? </span>
-                    <a style="cursor: pointer;" onclick="toggleSignupLogin()">
-                        Sign up </a></p>
-            </div>
+        <div id="loginDiv" style="display: none;">
+            <div class="h-screen w-screen  bg-[#6100C2] pt-10">
+              <div class="border-2 border-black rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] lg:mr-[25%] mt-10 bg-[#8b62b5] ">
+                  <h2 class="text-[48px] pl-[30%] md:text-[50px] lg:text-[52px] text-white">LOGIN</h2>
+                  <div class="flex md:flex-row flex-col mt-10">
+                      <label class="text-white" for="username"> Enter your Email </label>
+                      <input class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " type="text" id="l-email">
+                  </div>
+                  <div class="flex md:flex-row flex-col mt-10">
+                      <label class="text-white" for="password"> Enter your Password </label>
+                      <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px]" required="" id="l-password">
+                  </div>
+                  <div class="flex flex-row mt-10 space-x-1">
+                      <i class="far text-white fa-eye cursor-pointer p-5" id="togglePassword" onclick="toggleeye()"></i>
+                      <i class="mt-3 text-white cursor-pointer">Show password</i>
+                  </div>
+                  <div class="mt-10">
+                      <center><a href="#_" id="login" type="submit" class="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
+  <span class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
+  <span class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
+  <span class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+  <span class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+  <span class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
+  <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">Login</span>
+  </a></center>
+                  </div>
+                  <p class="mt-2 mb-4 text-[14px] text-gray-900">
+                      <span> Not a member? </span>
+                      <a style="cursor: pointer;" onclick="toggleSignupLogin()">
+                          Sign up </a></p>
+              </div>
+          </div>
         </div>
 
         <!-- SignUp div -->
         <div class="signUpDiv" id="signUpDiv">
-            <div class="signupC">
-                <h2>Sign up!</h2>
-                <div>
-                    <label for="name"> Enter your Name </label>
-                    <input type="text" required="" id="s-name" name="name">
+            <div class="h-screen w-screen shadow-xl bg-[#6100C2] pt-10">
+            <div class="border-2 border-black rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] bg-[#8b62b5] lg:mr-[25%] ">
+                <h2 class="text-[48px] pl-[30%] md:text-[50px] lg:text-[52px] text-white">SIGN UP</h2>
+                <div class="flex md:flex-row flex-col mt-10">
+                    <label class="text-white" for="name"> Enter your Name </label>
+                    <input type="text" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-name" name="name">
                 </div>
-                <div>
-                    <label for="email"> Enter your Email </label>
-                    <input type="email" id="s-email" required="" name="email">
+                <div class="flex md:flex-row flex-col mt-10">
+                    <label class="text-white" for="email"> Enter your Email </label>
+                    <input type="email" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " id="s-email" required="" name="email">
                 </div>
-                <div>
-                    <label for="password"> Set a Password </label>
-                    <input type="password" required="" id="s-password"
+                <div class="flex md:flex-row flex-col mt-10">
+                    <label class="text-white" for="password"> Set a Password </label>
+                    <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-password"
                         name="password">
+                </div>
+                <div class="flex flex-row mt-10 space-x-1">
+                    <i class="far fa-eye cursor-pointer p-5 text-white" id="togglePassword" onclick="toggleeye()"></i>
+                    <i class="mt-3 cursor-pointer text-white">Show password</i>
                 </div>
                 <!-- <div>  
                                 <label for="password"> Confirm Password </label>  
                                 <input type="password" required="" id="password" name="password" value="">  
                             </div>    -->
-                <div>
-                    <button id="signUp" type="submit"> Sign Up </button>
+                <div class="mt-10">
+                    <center><button id="signUp" type="submit" class="p-2 text-[32px] bg-blue-500 rounded-md" > Sign Up </button></center>
                 </div>
-                <p>
+                <p class="mt-2 mb-4 text-[14px] text-gray-900">
                     <span> Already have an account? </span>
                     <a style="cursor: pointer;" onclick="toggleSignupLogin()">
                         Sign in </a></p>
             </div>
+        </div>
         </div>
 
         <!-- Firebase config -->
@@ -182,6 +203,19 @@
                     b.style.display = "block";
                 }
             }
+            function toggleeye() {
+  var x = document.getElementById("s-password");
+  var y =document.getElementById("l-password");
+  if (x.type === "password" || y.type==="password") {
+    x.type = "text";
+    y.type="text";
+  } else {
+    x.type = "password";
+    y.type="password";
+  }
+} 
+            
         </script>
+    
     </body>
 </html>
