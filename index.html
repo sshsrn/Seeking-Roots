@@ -14,36 +14,36 @@
         <!-- Login div -->
         <div id="loginDiv" style="display: none;">
             <div class="h-screen w-screen  bg-[#6100C2] pt-10">
-            <div class="border-2 border-black rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] lg:mr-[25%] mt-10 bg-[#8b62b5] ">
-                <h2 class="text-[48px] pl-[30%] md:text-[50px] lg:text-[52px] text-white">LOGIN</h2>
-                <div class="flex md:flex-row flex-col mt-10">
-                    <label class="text-white" for="username"> Enter your Email </label>
-                    <input class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " type="text" id="l-email">
-                </div>
-                <div class="flex md:flex-row flex-col mt-10">
-                    <label class="text-white" for="password"> Enter your Password </label>
-                    <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px]" required="" id="l-password">
-                </div>
-                <div class="flex flex-row mt-10 space-x-1">
-                    <i class="far text-white fa-eye cursor-pointer p-5" id="togglePassword" onclick="toggleeye()"></i>
-                    <i class="mt-3 text-white cursor-pointer">Show password</i>
-                </div>
-                <div class="mt-10">
-                    <center><a href="#_" id="login" type="submit" class="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
-<span class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
-<span class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
-<span class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-<span class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-<span class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
-<span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">Login</span>
-</a></center>
-                </div>
-                <p class="mt-2 mb-4 text-[14px] text-gray-900">
-                    <span> Not a member? </span>
-                    <a style="cursor: pointer;" onclick="toggleSignupLogin()">
-                        Sign up </a></p>
-            </div>
-        </div>
+              <div class="border-2 border-black rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] lg:mr-[25%] mt-10 bg-[#8b62b5] ">
+                  <h2 class="text-[48px] pl-[30%] md:text-[50px] lg:text-[52px] text-white">LOGIN</h2>
+                  <div class="flex md:flex-row flex-col mt-10">
+                      <label class="text-white" for="username"> Enter your Email </label>
+                      <input class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " type="text" id="l-email">
+                  </div>
+                  <div class="flex md:flex-row flex-col mt-10">
+                      <label class="text-white" for="password"> Enter your Password </label>
+                      <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px]" required="" id="l-password">
+                  </div>
+                  <div class="flex flex-row mt-10 space-x-1">
+                      <i class="far text-white fa-eye cursor-pointer p-5" id="togglePassword" onclick="toggleeye()"></i>
+                      <i class="mt-3 text-white cursor-pointer">Show password</i>
+                  </div>
+                  <div class="mt-10">
+                      <center><a href="#_" id="login" type="submit" class="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
+  <span class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
+  <span class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
+  <span class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+  <span class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+  <span class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
+  <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">Login</span>
+  </a></center>
+                  </div>
+                  <p class="mt-2 mb-4 text-[14px] text-gray-900">
+                      <span> Not a member? </span>
+                      <a style="cursor: pointer;" onclick="toggleSignupLogin()">
+                          Sign up </a></p>
+              </div>
+          </div>
         </div>
 
         <!-- SignUp div -->
@@ -83,6 +83,113 @@
         </div>
         </div>
 
+        <!-- Firebase config -->
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+            import { getDatabase, set, ref, update, onValue, get, child } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+            import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyAPX3OteU8Ym8pGNGS7ye_MW2e0TtgItl4",
+              authDomain: "seekingroots-5d4e8.firebaseapp.com",
+              projectId: "seekingroots-5d4e8",
+              storageBucket: "seekingroots-5d4e8.appspot.com",
+              messagingSenderId: "964695803699",
+              appId: "1:964695803699:web:421793f49da7379361a046",
+              measurementId: "G-407NY13GGN"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            const auth = getAuth();
+            const database = getDatabase(app);
+            console.log("Firebase initialised");
+
+            // Signup with email and password
+            signUp.addEventListener('click', (e) => {
+                var email = document.getElementById("s-email").value;
+                // console.log(email);
+                var password = document.getElementById("s-password").value;
+                // console.log(password);
+                var name =  document.getElementById("s-name").value;
+                // console.log(name);
+
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then(async (userCredential) => {
+                        // Signed in 
+                        const user = userCredential.user;
+                        await set(ref(database,'users/' + email.split('.')[0]), {
+                            email: email,
+                            name: name,
+                            lastLogin: Date.now(),
+                        });
+                        // Never save password to the database.
+                        console.log("Created account Successfully!");
+                        // window.location.replace("index1.html");
+
+                        var url = new URL(window.location.href+"index1.html");
+                        window.open(url);
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        alert(errorMessage);
+                        // ..
+                    });
+            });
+    
+            // Login with email and password
+            login.addEventListener('click', async (e) => {
+                var email = document.getElementById("l-email").value;
+                // console.log(email);
+                var password = document.getElementById("l-password").value;
+                // console.log(password);
+                console.log("email", email);
+                signInWithEmailAndPassword(auth, email, password)
+                    .then(async(userCredential) => {
+                        // Signed in 
+                        const user = userCredential.user;
+                        await update(ref(database,'users/' + email.split('.')[0]), {
+                            lastLogin: Date.now(),
+                        });
+                        // ...
+                        console.log("User logged in Successfully!");
+                        // window.location.replace("index1.html");
+
+                        var url = new URL(window.location.href+"index1.html");
+                        window.open(url);
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        alert(errorMessage);
+                    });
+            });
+    
+            const user = auth.currentUser;
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    // User is signed in, see docs for a list of available properties
+                    // https://firebase.google.com/docs/reference/js/firebase.User
+                    const uid = user.uid;
+                    console.log(user);
+                    // When user is signed in, do not go to signin signup page
+                    window.location.replace("index1.html");
+                    // ...
+                } else {
+                    // User is signed out
+                    // ...
+                }
+            });
+          </script>
         <script>
             function toggleSignupLogin() {
                 a = document.getElementById("signUpDiv");
