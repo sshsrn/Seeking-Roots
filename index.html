@@ -91,6 +91,81 @@
             const auth = getAuth();
             const database = getDatabase(app);
             console.log("Firebase initialised");
+
+            // Signup with email and password
+            signUp.addEventListener('click', (e) => {
+                var email = document.getElementById("s-email").value;
+                // console.log(email);
+                var password = document.getElementById("s-password").value;
+                // console.log(password);
+                var name =  document.getElementById("s-name").value;
+                // console.log(name);
+
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then(async (userCredential) => {
+                        // Signed in 
+                        const user = userCredential.user;
+                        await set(ref(database,'users/' + email.split('.')[0]), {
+                            email: email,
+                            name: name,
+                            lastLogin: Date.now(),
+                        });
+                        // Never save password to the database.
+                        console.log("Created account Successfully!");
+                        // window.location.replace("index1.html");
+
+                        var url = new URL(window.location.href+"index1.html");
+                        window.open(url);
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        alert(errorMessage);
+                        // ..
+                    });
+            });
+    
+            // Login with email and password
+            login.addEventListener('click', async (e) => {
+                var email = document.getElementById("l-email").value;
+                // console.log(email);
+                var password = document.getElementById("l-password").value;
+                // console.log(password);
+                console.log("email", email);
+                signInWithEmailAndPassword(auth, email, password)
+                    .then(async(userCredential) => {
+                        // Signed in 
+                        const user = userCredential.user;
+                        await update(ref(database,'users/' + email.split('.')[0]), {
+                            lastLogin: Date.now(),
+                        });
+                        // ...
+                        console.log("User logged in Successfully!");
+                        // window.location.replace("index1.html");
+
+                        var url = new URL(window.location.href+"index1.html");
+                        window.open(url);
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        alert(errorMessage);
+                    });
+            });
+    
+            const user = auth.currentUser;
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    // User is signed in, see docs for a list of available properties
+                    // https://firebase.google.com/docs/reference/js/firebase.User
+                    const uid = user.uid;
+                    console.log(user);
+                    // ...
+                } else {
+                    // User is signed out
+                    // ...
+                }
+            });
           </script>
         <script>
             function toggleSignupLogin() {
