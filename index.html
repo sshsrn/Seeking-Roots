@@ -160,6 +160,8 @@
                     // https://firebase.google.com/docs/reference/js/firebase.User
                     const uid = user.uid;
                     console.log(user);
+                    // When user is signed in, do not go to signin signup page
+                    window.location.replace("index1.html");
                     // ...
                 } else {
                     // User is signed out
