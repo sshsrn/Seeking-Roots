@@ -56,7 +56,8 @@
         <div class="signUpDiv" id="signUpDiv">
             <div class="h-screen w-screen shadow-xl bg-[#6100C2] pt-10">
                 <div class="border-2 border-black rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] bg-[#8b62b5] lg:mr-[25%] ">
-                    <h2 class="text-[48px] pl-[30%] md:text-[50px] lg:text-[52px] text-white">SIGN UP</h2>
+                    <center><h2 class="text-[48px] md:text-[50px] lg:text-[52px] text-white">SIGN UP</h2></center>
+                    <!-- <img src="https://api.multiavatar.com/a.png" alt="" srcset=""> -->
                     <div class="flex md:flex-row flex-col mt-10">
                         <label class="text-white" for="name"> Enter your Name </label>
                         <input type="text" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-name" name="name">
@@ -70,14 +71,32 @@
                         <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-password"
                             name="password">
                     </div>
+                    <div class="flex md:flex-row flex-col mt-10">
+                        <label class="text-white" for="password"> Confirm Password </label>
+                        <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-password"
+                            name="password">
+                    </div>
                     <div class="flex flex-row mt-10 space-x-1">
                         <i class="far fa-eye cursor-pointer p-5 text-white" id="togglePassword" onclick="toggleeye()"></i>
                         <i class="mt-3 cursor-pointer text-white">Show password</i>
                     </div>
-                    <!-- <div>  
-                                    <label for="password"> Confirm Password </label>  
-                                    <input type="password" required="" id="password" name="password" value="">  
-                                </div>    -->
+                    <div>
+                        <label class="text-white" for="password">Select image type </label>
+                        <select onchange="checkDisplay('APIimage');checkDisplay('uploadImg')" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " name="" id="profile-pic-type">
+                            <option value="generate">Generate Random image</option>
+                            <option value="upload">Upload Profile Picture</option>
+                        </select>
+                    </div>
+                    <div id="APIimage">
+                        <label class="text-white" for="password">Select</label>
+                        <select class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " name="" id="profile-pic">
+                            <option value="grav">Gravatar</option>
+                            <option value="rand">Random Avatar</option>
+                        </select>
+                    </div>
+                    <div id="uploadImg" style="display: none;">
+                        <button>Upload image</button>
+                    </div>
                     <div class="mt-10">
                         <center><button id="signUp" type="submit" class="p-2 text-[32px] bg-blue-500 rounded-md" > Sign Up </button></center>
                     </div>
@@ -121,15 +140,30 @@
             const database = getDatabase(app);
             console.log("Firebase initialised");
 
+            // Function to select image
+            function selectImage() {
+                var e = document.getElementById("profile-pic");
+                selected = e.options[e.selectedIndex].text;
+                console.log(selected);
+                var ppurl;
+                if(selected === "Random Avatar") {
+                    ppurl = "https://api.multiavatar.com/" + Math.random().toString(26).slice(2) + ".png"
+                }
+                else if(selected === "Gravatar") {
+                    ppurl = "https://www.gravatar.com/avatar/" + Math.random().toString(16).slice(2) + "?s=100&d=retro";
+                }
+                return ppurl;
+            }
+
             // Signup with email and password
-            signUp.addEventListener('click', (e) => {
+            signUp.addEventListener('click', async(e) => {
                 var email = document.getElementById("s-email").value;
                 // console.log(email);
                 var password = document.getElementById("s-password").value;
                 // console.log(password);
                 var name =  document.getElementById("s-name").value;
                 // console.log(name);
-
+                var profilePicUrl = await selectImage();
                 createUserWithEmailAndPassword(auth, email, password)
                     .then(async (userCredential) => {
                         // Signed in 
@@ -138,13 +172,20 @@
                             email: email,
                             name: name,
                             lastLogin: Date.now(),
+                            profilePicUrl: profilePicUrl,
                         });
                         // Never save password to the database.
                         console.log("Created account Successfully!");
                         // window.location.replace("index1.html");
 
-                        var url = new URL(window.location.href+"index1.html");
-                        window.open(url);
+                        var url = await new URL(window.location.href);
+                        var newUrl = await new URL('index1.html', url);
+
+                        console.log("Url to open:", newUrl);
+                        await window.open(newUrl);
+                        console.log(window.location.href);
+                        await localStorage.setItem("childOpen", true);
+                        window.location.replace("index2.html");
                     })
                     .catch((error) => {
                         const errorCode = error.code;
@@ -211,8 +252,11 @@
                     // ...
                 }
             });
-          </script>
+        </script>
         <script>
+
+            var selected;
+
             function toggleSignupLogin() {
                 a = document.getElementById("signUpDiv");
                 b = document.getElementById("loginDiv");
@@ -226,17 +270,27 @@
                 }
             }
             function toggleeye() {
-  var x = document.getElementById("s-password");
-  var y =document.getElementById("l-password");
-  if (x.type === "password" || y.type==="password") {
-    x.type = "text";
-    y.type="text";
-  } else {
-    x.type = "password";
-    y.type="password";
-  }
-} 
-            
+                var x = document.getElementById("s-password");
+                var y =document.getElementById("l-password");
+                if (x.type === "password" || y.type==="password") {
+                    x.type = "text";
+                    y.type="text";
+                } 
+                else {
+                    x.type = "password";
+                    y.type="password";
+                }
+            }
+
+            function checkDisplay(x) {
+                var a = document.getElementById(x);
+                if (a.style.display === "none") {
+                    a.style.display = "block";
+                } 
+                else {
+                    a.style.display = "none";
+                }
+            }
         </script>
     
     </body>
