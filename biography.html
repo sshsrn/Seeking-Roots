@@ -27,7 +27,7 @@
             </div>
             <div class="flex flex-col md:flex-row mt-10">
                 <label class="text-blue-500" for="biographyDetailed"> A detailed biography about the person </label><br>
-                <textarea name="biographyDetailed" placeholder="MarkDown Support is also enabled"></textarea>
+                <div class="biographyDiv" contenteditable="true" name="biographyDetailed" placeholder="MarkDown Support is also enabled"></div>
             </div>
             <div>
                 <label for="multimedia files">Add multimedia files</label>
@@ -70,9 +70,28 @@
             const auth = getAuth();
             const storage = getStorage(app);
             console.log("Firebase initialised");
-            const storageRef = sRef(storage, "final");
+            var storageRef;
 
+            function getStorageRef(name) {
+                return sRef(storage, `users/${auth.currentUser.email}/images/${name}`);
+            }
 
+            // Check if user is logged in
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    // User is signed in, see docs for a list of available properties
+                    // https://firebase.google.com/docs/reference/js/firebase.User
+                    const uid = user.uid;
+                    // console.log(user);
+                    // ...
+                } else {
+                    // User is signed out
+                    // alert("No user is signed in.");
+                    window.location.replace("index.html");
+                }
+            });
+
+            // Global variables
             var imgName;
             var files = [];
             var reader = new FileReader();
@@ -94,8 +113,9 @@
             }
 
             // Upload function
-            document.getElementById("upload").onclick = function (e) {
+            document.getElementById("upload").onclick = async function (e) {
                 imgName = document.getElementById("namebox").value;
+                storageRef = await getStorageRef(imgName);
                 uploadBytes(storageRef, files[0]).then((snapshot) => {
                     console.log('Uploaded the file successfully!');
                 });
@@ -106,8 +126,11 @@
                 var checkBox = document.querySelector(".addFilesOrNot");
                 var uploadBtns = document.querySelector(".uploadBtns");
                 if (checkBox.checked == true) {
+                    // Show upload buttons if checkbox is checked
                     uploadBtns.style.display = "block";
-                } else {
+                } 
+                else {
+                    // else, show nothing
                     uploadBtns.style.display = "none";
                 }
             }
