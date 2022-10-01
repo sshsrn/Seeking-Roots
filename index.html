@@ -178,6 +178,7 @@
                 else if(selected === "Gravatar") {
                     ppurl = "https://www.gravatar.com/avatar/" + Math.random().toString(16).slice(2) + "?s=100&d=retro";
                 }
+                console.log(ppurl);
                 return ppurl;
             }
 
@@ -201,8 +202,8 @@
                             email: email,
                             name: name,
                             key: uniqueKey,
-                            accountCreated: Date.now(),
                             lastLogin: Date.now(),
+                            accountCreated: Date.now(),
                             profilePicUrl: profilePicUrl,
                             authUsers: Array("sshsrn@gmail.com"),
                         });
@@ -334,6 +335,5 @@
                 }
             }
         </script>
-    
     </body>
 </html>

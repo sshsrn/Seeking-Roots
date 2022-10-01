@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Page</title>
+        <title>User Profile Page</title>
     </head>
     <body>
+        <video id="cloud-gif" src="assets/cloud-tech.mp4" muted autoplay loop></video>
         <h1>Home Page</h1>
         <div class="form-inline my-2 my-lg-0">
             <button id="logoutButton" class="mx-5">Logout</button>
@@ -21,16 +22,27 @@
                     <th style="border: 1px solid black;" colspan="2">User Details</th>
                 </thead>
                 <tr>
+                    <td colspan="2"><center><img style="border: 1px solid black;border-radius: 100%;" width="100px" id="userProfilePic"></center></td>
+                </tr>
+                <tr>
                     <td>Name: </td>
                     <td id="user-name">Anonymous</td>
                 </tr>
                 <tr>
                     <td>Email: </td>
-                    <td id="user-email">test@test.com</td>
+                    <td id="user-email">Not Provided</td>
                 </tr>
                 <tr>
                     <td>Phone: </td>
-                    <td>6969696969</td>
+                    <td id="user-phone">Not Provided</td>
+                </tr>
+                <tr>
+                    <td>Active since: </td>
+                    <td id="accountCreated" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Last Login: </td>
+                    <td id="lastLogin" type="text"></td>
                 </tr>
             </table></center>
         </div>
@@ -50,13 +62,19 @@
                     <td><input id="updatedMobileNumber" type="number" onKeyPress="if(this.value.length==10) return false;"></td>
                 </tr>
             </table></center>
-            <center><button class="mt-3" id="updateDetailsButton">Update</button></center>
+            <center><button class="mt-3" id="updateDetailsButton" onclick="showDisplayHideUpdate()">Update</button></center>
         </div>
 
         <script>
             function showUpdateHideDisplay(){
                 document.querySelector(".DisplayUserDetails").style.display = "none";
                 document.querySelector(".UpdateUserDetails").style.display = "block";
+            }
+
+            function showDisplayHideUpdate(){
+                document.querySelector(".DisplayUserDetails").style.display = "block";
+                document.querySelector(".UpdateUserDetails").style.display = "none";
+                window.location.reload();
             }
         </script>
         <script type="module">
@@ -116,6 +134,9 @@
                             const data = await snapshot.val();
                             // console.log("data from firebase", data);
                             e = await data.name;
+                            if(e===""){
+                                e = "Anonymous";
+                            }
                         } else {
                             console.log("No data available");
                         }
@@ -123,7 +144,42 @@
                             console.error(error);
                     });
                 }
-
+                else if(x === "lastlogin"){
+                    await get(child(dbRef, `users/` + dbUserRef)).then(async (snapshot) => {
+                        if (await snapshot.exists()) {
+                            const data = await snapshot.val();
+                            // console.log("data from firebase", data);
+                            e = await data.lastLogin;
+                        } else {
+                            console.log("No data available");
+                        }
+                        }).catch((error) => {
+                            console.error(error);
+                    });
+                    console.log(e);
+                    const t = e;
+                    const td = new Date(t);
+                    e = td.toDateString();
+                    console.log(e); 
+                }
+                else if(x === "accountCreated"){
+                    await get(child(dbRef, `users/` + dbUserRef)).then(async (snapshot) => {
+                        if (await snapshot.exists()) {
+                            const data = await snapshot.val();
+                            // console.log("data from firebase", data);
+                            e = await data.accountCreated;
+                        } else {
+                            console.log("No data available");
+                        }
+                        }).catch((error) => {
+                            console.error(error);
+                    });
+                    console.log(e);
+                    const t = e;
+                    const td = new Date(t);
+                    e = td.toDateString();
+                    console.log(e); 
+                }
                 else if(x === "authUsers"){
                     await get(child(dbRef, `users/` + dbUserRef + `/authUsers`)).then(async (snapshot) => {
                         if (await snapshot.exists()) {
@@ -132,6 +188,40 @@
                             e = await data;
                         } else {
                             console.log("No data available");
+                        }
+                        }).catch((error) => {
+                            console.error(error);
+                    });
+                }
+                else if(x === "phone"){
+                    await get(child(dbRef, `users/` + dbUserRef)).then(async (snapshot) => {
+                        if (await snapshot.exists()) {
+                            const data = await snapshot.val();
+                            // console.log("data from firebase", data);
+                            e = await data.phone;
+                            if(e===""){
+                                e = "Not Provided";
+                            }
+                        } else {
+                            console.log("No data available");
+                            e = "Not Provided";
+                        }
+                        }).catch((error) => {
+                            console.error(error);
+                    });
+                }
+                else if(x === "profilePicUrl"){
+                    await get(child(dbRef, `users/` + dbUserRef)).then(async (snapshot) => {
+                        if (await snapshot.exists()) {
+                            const data = await snapshot.val();
+                            // console.log("data from firebase", data);
+                            e = await data.profilePicUrl;
+                            if(e===""){
+                                e = "Not Provided";
+                            }
+                        } else {
+                            console.log("No data available");
+                            e = "Not Provided";
                         }
                         }).catch((error) => {
                             console.error(error);
@@ -199,12 +289,35 @@
                 document.getElementById("user-email").innerText = await getDetailOfURLFromDb("email");
             }
 
+            // Function to update phone number in user details
+            async function updateLastLogin() {
+                document.getElementById("lastLogin").innerText = await getDetailOfURLFromDb("lastlogin");
+            }
+
+            async function updateCreateAcc() {
+                document.getElementById("accountCreated").innerText = await getDetailOfURLFromDb("accountCreated");
+            }
+
+            // Function to update phone number in user details
+            async function updatePhone() {
+                document.getElementById("user-phone").innerText = await getDetailOfURLFromDb("phone");
+            }
+
+            // Function to update profile picture in user details
+            async function updateDp() {
+                document.getElementById("userProfilePic").src = await getDetailOfURLFromDb("profilePicUrl");
+            }
+
             // Functions to run when page loads
             function initFunctions(a) {
                 console.log(checkAuth(a));
                 ifSameUser(a);
                 updateName();
                 updateEmail();
+                updateDp();
+                updatePhone();
+                updateCreateAcc();
+                updateLastLogin();
             }
 
             // Update the details in the database
@@ -220,19 +333,35 @@
                 });
             });
 
-            onAuthStateChanged(auth, (user) => {
+            onAuthStateChanged(auth, async(user) => {
                 if (user) {
                     // User is signed in, see docs for a list of available properties
                     // https://firebase.google.com/docs/reference/js/firebase.User
                     const uid = user.uid;
                     // console.log(user);
-                    initFunctions(user);
+                    // initFunctions(user);
 
+                    let myPromise = new Promise(function(myResolve, myReject) {
+                        // Promises implementation
+                        initFunctions(user);
+                        console.log("1");
+                    });
+                    myPromise.then(
+                        function(value) {
+                            console.log("21");
+                            document.getElementById("cloud-gif").style.display = none;
+                            console.log("2");
+                        },
+                        function (error) {
+                            console.log(error);
+                        }
+                    );
                     // ...
                 } else {
                     // User is signed out
                     // alert("No user is signed in.");
-                    window.location.replace("error.html");
+                    localStorage.clear();
+                    window.location.replace("index.html");
                 }
             });
 
