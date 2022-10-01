@@ -7,41 +7,41 @@
         <title>Document</title>
     </head>
     <body>
-        <form>
-            <h1>Ancestor details</h1>
+        <div class="Biography">
+            <h1>Biography of <span id="person-name"></span></h1>
             <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-blue-500" for="ancestor_name"> Ancestor Name
+                <label class="text-blue-500"> Enter the person's Name
                 </label>
                 <input class="p-2 md:ml-10 focus:outline-none rounded-lg
                     h-[48px] md:w-[400px] " type="text" id="ancestor_name">
             </div>
             <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-blue-500" for="ancestor_age"> Ancestor age
+                <label class="text-blue-500" for="ancestor_age"> Enter the person's Date of Birth
                 </label>
                 <input class="p-2 md:ml-10 focus:outline-none rounded-lg
-                    h-[48px] md:w-[400px] " type="number" id="ancestor_name">
+                    h-[48px] md:w-[400px] " type="date" id="ancestor_name">
             </div>
             <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-blue-500" for="ancestor_birthday"> Ancestor
-                    DOB </label>
-                <input class="p-2 md:ml-10 focus:outline-none rounded-lg
-                    h-[48px] md:w-[400px] " type="date" id="ancestor_birthday">
+                <label class="text-blue-500" for="ancestor_birthday"> Age of the person </label>
+                <input disabled class="p-2 md:ml-10 focus:outline-none rounded-lg
+                    h-[48px] md:w-[400px] " type="number" id="ancestor_birthday">
             </div>
             <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-blue-500" for="ancestor_name"> Short
-                    description </label>
-                <input class="p-2 md:ml-10 focus:outline-none rounded-lg
-                    h-[48px] md:w-[400px] " type="text"
-                    id="ancestor_description">
+                <label class="text-blue-500" for="ancestor_name"> A detailed biography about the person </label>
+                <textarea placeholder="MarkDown Support is also enabled"></textarea>
             </div>
-            <!-- Voice -->
-            Image name: <input id="namebox" type="text"><br><br>
-            <img id="myimg" src="" alt="image"><label for="" id="upProgress"></label><br><br>
-            <button id="select">Select</button>
-            <button id="upload">Upload</button>
-            
-
-        </form>
+            <div>
+                <label for="multimedia files">Add multimedia files</label>
+                <input type="checkbox" class="addFilesOrNot" onclick="showUploadBtns()" name="multimedia files" id="">
+            </div>
+            <div class="uploadBtns" style="display: none;">
+                <img id="myimg" src="" alt="image">
+                <button id="select">Select</button>
+                <label for="fileName">Before Uploading, Enter a valid file name</label><input name="fileName" id="namebox" type="text">
+                <button id="upload">Upload</button>
+            </div>
+            <center><button>Save and Preview</button></center>
+        </div>
 
 
         
@@ -100,11 +100,20 @@
             document.getElementById("upload").onclick = function (e) {
                 imgName = document.getElementById("namebox").value;
                 uploadBytes(storageRef, files[0]).then((snapshot) => {
-                    console.log('Uploaded a blob or file!');
+                    console.log('Uploaded the file successfully!');
                 });
             }
-            
-
+    </script>
+    <script>
+        function showUploadBtns() {
+            var checkBox = document.querySelector(".addFilesOrNot");
+            var uploadBtns = document.querySelector(".uploadBtns");
+            if (checkBox.checked == true) {
+                uploadBtns.style.display = "block";
+            } else {
+                uploadBtns.style.display = "none";
+            }
+        }
     </script>
     </body>
 </html>
