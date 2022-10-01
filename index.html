@@ -212,9 +212,10 @@
 
                         var url = await new URL(window.location.href);
                         var newUrl = await new URL('index1.html', url);
-                        url.searchParams.append('user', uniqueKey);
+                        newUrl.searchParams.append('user', uniqueKey);
+                        console.log("after adding parameters: ",newUrl);
                         // By default, @ is represented as %40
-                        url.href = url.href.replace("%40","@");
+                        newUrl.href = newUrl.href.replace("%40","@");
                         console.log("Url to open:", newUrl);
                         await window.open(newUrl);
                         console.log(window.location.href);
