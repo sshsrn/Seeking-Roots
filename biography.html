@@ -4,29 +4,33 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css"/>
+        <script src="https://cdn.tailwindcss.com"></script>
         <title>Document</title>
     </head>
     <body>
-        <div class="Biography">
+        <div class="h-[1000px] w-full  bg-[#6100C2] ">
             <center><h1>Biography of <span id="person-name"></span></h1></center>
+            <div class="bg-[#8b62b5] border-2 border-white rounded-lg p-5 lg:ml-[20vh] lg:mr-[20vh] ">
+            
             <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-blue-500"> Enter the person's Name
+                <label class="text-white-500"> Enter the person's Name
                 </label>
-                <input class="p-2 md:ml-10 focus:outline-none rounded-lg
-                    h-[48px] md:w-[400px] " type="text" id="nameInForm">
+                <input class="p-2 md:ml-10 focus:outline-none rounded-lg bg-white
+                    h-[48px] md:w-[400px] md:ml-[90px]" type="text" id="nameInForm">
             </div>
             <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-blue-500" for="ancestor_age"> Enter the person's Date of Birth</label>
-                <input class="p-2 md:ml-10 focus:outline-none rounded-lg
+                <label class="text-white-500" for="ancestor_age"> Enter the person's Date of Birth</label>
+                <input class="p-2 md:ml-10 focus:outline-none rounded-lg bg-white
                     h-[48px] md:w-[400px] " type="date" id="dobInForm">
             </div>
             <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-blue-500" for="ancestor_birthday"> Age of the person </label>
-                <input disabled class="p-2 md:ml-10 focus:outline-none rounded-lg
+                <label class="text-white-500" for="ancestor_birthday"> Age of the person </label>
+                <input disabled class="p-2 md:ml-10 focus:outline-none rounded-lg md:ml-[135px] bg-white
                     h-[48px] md:w-[400px] " type="number" id="ageInForm">
             </div>
             <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-blue-500" for="biographyDetailed"> A detailed biography about the person </label><br>
+                <label class="text-white-500" for="biographyDetailed"> A detailed biography about the person </label><br>
                 <div class="biographyDiv" contenteditable="true" name="biographyDetailed" placeholder="MarkDown Support is also enabled"></div>
             </div>
             <div>
@@ -34,12 +38,17 @@
                 <input type="checkbox" class="addFilesOrNot" onclick="showUploadBtns()" name="multimedia files" id="">
             </div>
             <div class="uploadBtns" style="display: none;">
-                <img id="myimg" src="" alt="image">
-                <button id="select">Select</button>
-                <label for="fileName">Before Uploading, Enter a valid file name</label><input name="fileName" id="namebox" type="text">
+                <img id="myimg" src="" alt="">
+                <div class="">
+                    <button id="select" class="bg-[#6100C2]">Select</button>
+                    <div></div>
+                    <label for="fileName">Before Uploading, Enter a valid file name</label><input name="fileName" id="namebox" type="text">
+                </div>
+                
                 <button id="upload">Upload</button>
             </div>
-            <center><button>Save and Preview</button></center>
+            <center><button class="mt-10 mb-5">Save and Preview</button></center>
+        </div>
         </div>
         
         <script type="module">
