@@ -334,10 +334,11 @@
             // Update the details in the database
             updateDetailsButton.addEventListener('click', (e) => {
                 var currURL = window.location.href;
-                const dbUserRef = currURL.split('/')[3].split('?')[1].split('=')[1].split('-')[0];
+                const dbUserRef = currURL.split('/')[4].split('?')[1].split('=')[1].split('-')[0];
                 // console.log(dbRef + `users/` + dbUserRef);
                 let updatedName = document.getElementById("updatedName");
                 let updatedMobileNumber = document.getElementById("updatedMobileNumber");
+                console.log(updatedName.value, updatedMobileNumber.value);
                 update(ref(database,`users/` + dbUserRef), {
                     name: updatedName.value,
                     phone: updatedMobileNumber.value,
