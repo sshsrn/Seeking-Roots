@@ -7,62 +7,70 @@
         <title>User Profile Page</title>
     </head>
     <body>
-        <video id="cloud-gif" src="assets/cloud-tech.mp4" muted autoplay loop></video>
-        <h1>Home Page</h1>
-        <div class="form-inline my-2 my-lg-0">
-            <button id="logoutButton" class="mx-5">Logout</button>
-            <button id="updateDetails" style="display: none;" onclick="showUpdateHideDisplay(); document.getElementById('updateDetails').style.display = 'none'">Add/Update Details</button>
-        </div>
+        <center>
+            <div id="cloud-gif" >
+                <video class="cloud-gif-video" id="cloud-gif-video" src="assets/cloud-tech.mp4" muted autoplay loop></video>
+                <h2>Fetching data from the cloud...</h2>
+            </div>
+            <video style="display: none;" class="transitionVideo" id="transitionVideo" src="assets/smooth-transition.mp4" muted autoplay></video>
+        </center>
+        <div class="userProfile" id="userProfile" style="display: none;">
+            <h1>Home Page</h1>
+            <div class="form-inline my-2 my-lg-0">
+                <button id="logoutButton" class="mx-5">Logout</button>
+                <button id="updateDetails" style="display: none;" onclick="showUpdateHideDisplay(); document.getElementById('updateDetails').style.display = 'none'">Add/Update Details</button>
+            </div>
 
-        <button id="goToProfile" style="display: none;">Go to my Profile</button>
+            <button id="goToProfile" style="display: none;">Go to my Profile</button>
 
-        <div class="DisplayUserDetails mt-5">
-            <center><table>
-                <thead>
-                    <th style="border: 1px solid black;" colspan="2">User Details</th>
-                </thead>
-                <tr>
-                    <td colspan="2"><center><img style="border: 1px solid black;border-radius: 100%;" width="100px" id="userProfilePic"></center></td>
-                </tr>
-                <tr>
-                    <td>Name: </td>
-                    <td id="user-name">Anonymous</td>
-                </tr>
-                <tr>
-                    <td>Email: </td>
-                    <td id="user-email">Not Provided</td>
-                </tr>
-                <tr>
-                    <td>Phone: </td>
-                    <td id="user-phone">Not Provided</td>
-                </tr>
-                <tr>
-                    <td>Active since: </td>
-                    <td id="accountCreated" type="text"></td>
-                </tr>
-                <tr>
-                    <td>Last Login: </td>
-                    <td id="lastLogin" type="text"></td>
-                </tr>
-            </table></center>
-        </div>
+            <div class="DisplayUserDetails mt-5">
+                <center><table>
+                    <thead>
+                        <th style="border: 1px solid black;" colspan="2">User Details</th>
+                    </thead>
+                    <tr>
+                        <td colspan="2"><center><img style="border: 1px solid black;border-radius: 100%;" width="100px" id="userProfilePic"></center></td>
+                    </tr>
+                    <tr>
+                        <td>Name: </td>
+                        <td id="user-name">Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td id="user-email">Not Provided</td>
+                    </tr>
+                    <tr>
+                        <td>Phone: </td>
+                        <td id="user-phone">Not Provided</td>
+                    </tr>
+                    <tr>
+                        <td>Active since: </td>
+                        <td id="accountCreated" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Last Login: </td>
+                        <td id="lastLogin" type="text"></td>
+                    </tr>
+                </table></center>
+            </div>
 
-        <div class="UpdateUserDetails mt-5" style="display: none;">
-            <center><table>
-                <thead>
-                    <th style="border: 1px solid black;" colspan="2">Update User Details</th>
-                </thead>
-                <tr>
-                    <td>Name: </td>
-                    <td><input id="updatedName" type="text"></td>
-                </tr>
-                <tr>
-                    <td>Phone: </td>
-                    <!-- Max-Length = 10 -->
-                    <td><input id="updatedMobileNumber" type="number" onKeyPress="if(this.value.length==10) return false;"></td>
-                </tr>
-            </table></center>
-            <center><button class="mt-3" id="updateDetailsButton" onclick="showDisplayHideUpdate()">Update</button></center>
+            <div class="UpdateUserDetails mt-5" style="display: none;">
+                <center><table>
+                    <thead>
+                        <th style="border: 1px solid black;" colspan="2">Update User Details</th>
+                    </thead>
+                    <tr>
+                        <td>Name: </td>
+                        <td><input id="updatedName" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone: </td>
+                        <!-- Max-Length = 10 -->
+                        <td><input id="updatedMobileNumber" type="number" onKeyPress="if(this.value.length==10) return false;"></td>
+                    </tr>
+                </table></center>
+                <center><button class="mt-3" id="updateDetailsButton" onclick="showDisplayHideUpdate()">Update</button></center>
+            </div>
         </div>
 
         <script>
@@ -309,15 +317,15 @@
             }
 
             // Functions to run when page loads
-            function initFunctions(a) {
+            async function initFunctions(a) {
                 console.log(checkAuth(a));
-                ifSameUser(a);
-                updateName();
-                updateEmail();
-                updateDp();
-                updatePhone();
-                updateCreateAcc();
-                updateLastLogin();
+                await ifSameUser(a);
+                await updateName();
+                await updateEmail();
+                await updateDp();
+                await updatePhone();
+                await updateCreateAcc();
+                await updateLastLogin();
             }
 
             // Update the details in the database
@@ -341,16 +349,22 @@
                     // console.log(user);
                     // initFunctions(user);
 
-                    let myPromise = new Promise(function(myResolve, myReject) {
+                    let myPromise = new Promise(async function(myResolve, myReject) {
                         // Promises implementation
-                        initFunctions(user);
+                        await initFunctions(user);
                         console.log("1");
-                    });
-                    myPromise.then(
+                        return myResolve("Promise resolved");
+                    }).then(
                         function(value) {
                             console.log("21");
-                            document.getElementById("cloud-gif").style.display = none;
-                            console.log("2");
+                            document.getElementById("cloud-gif").style.display = "none";
+                            let transitionVideo = document.getElementById("transitionVideo");
+                            transitionVideo.style.display = "block";
+                            transitionVideo.play();
+                            transitionVideo.onended = function() {
+                                document.getElementById("transitionVideo").style.display = "none";
+                                document.getElementById("userProfile").style.display = "block";
+                            }
                         },
                         function (error) {
                             console.log(error);
