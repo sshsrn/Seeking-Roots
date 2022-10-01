@@ -1,0 +1,13 @@
+body{
+    background-color: #6100C2;
+}
+
+.overallContainer{
+    border: 2px solid white;
+    border-radius: 30px;
+    margin-top: 5%;
+    width: 70%;
+    padding: 50px;
+    margin-left: 9%;
+    background-color: wheat;
+}

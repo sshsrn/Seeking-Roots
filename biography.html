@@ -5,50 +5,55 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css"/>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <title>Document</title>
+        <link rel="stylesheet" href="biography.css">
+        <!-- Remarkable js => Render Md to HTML -->
+		<script src="https://cdn.jsdelivr.net/remarkable/1.7.1/remarkable.min.js"></script>
+        <!-- jsPDF => render html as pdf -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+        <title>Biography</title>
     </head>
     <body>
-        <div class="h-[1000px] w-full  bg-[#6100C2] ">
-            <center><h1>Biography of <span id="person-name"></span></h1></center>
-            <div class="bg-[#8b62b5] border-2 border-white rounded-lg p-5 lg:ml-[20vh] lg:mr-[20vh] ">
-            
-            <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-white-500"> Enter the person's Name
+            <div class="overallContainer">
+                <center><h1>Biography of <span id="person-name"></span></h1></center>
+            <div style="margin-top: 20px;">
+                <label> Enter the person's Name
                 </label>
-                <input class="p-2 md:ml-10 focus:outline-none rounded-lg bg-white
-                    h-[48px] md:w-[400px] md:ml-[90px]" type="text" id="nameInForm">
+                <input style="margin-left: 70px;" type="text" id="nameInForm">
             </div>
-            <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-white-500" for="ancestor_age"> Enter the person's Date of Birth</label>
-                <input class="p-2 md:ml-10 focus:outline-none rounded-lg bg-white
-                    h-[48px] md:w-[400px] " type="date" id="dobInForm">
+            <div style="margin-top: 20px;">
+                <label for="ancestor_age"> Enter the person's Date of Birth</label>
+                <input style="margin-left: 30px;" type="date" id="dobInForm">
             </div>
-            <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-white-500" for="ancestor_birthday"> Age of the person </label>
+            <div style="margin-top: 20px;">
+                <label for="ancestor_birthday"> Age of the person </label>
                 <input disabled class="p-2 md:ml-10 focus:outline-none rounded-lg md:ml-[135px] bg-white
                     h-[48px] md:w-[400px] " type="number" id="ageInForm">
             </div>
-            <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-white-500" for="biographyDetailed"> A detailed biography about the person </label><br>
-                <div class="biographyDiv" contenteditable="true" name="biographyDetailed" placeholder="MarkDown Support is also enabled"></div>
+            <div style="margin-top: 20px;">
+                <label for="biographyDetailed"> A detailed biography about the person </label><br>
+                <div id="md_text_div" class="ml-3" contenteditable="true" style="margin-top: 20px; padding: 30px; height: 500px;border: 2px solid lightcoral; border-radius: 30px;"></div>
+				<div id="html_render_div" class="ml-3" style="margin-top: 20px; padding: 30px;height: 500px; display: none;border: 2px solid lightcoral; border-radius: 30px;"></div>
+                <center><button id="mdhtmlbtn" style="margin-top: 30px;padding: 10px;" onclick="toggleHtmlMd()">Render MarkDown</button></center>
+				<div class="saveAndPrintDiv" id="saveAndPrintDiv" style="display: none;">
+					<center><button id="saveAsPdf" style="margin-top: 30px;padding: 10px;" onclick="savePdf()">Save as Pdf</button></center>
+				    <center><button id="printPdf" style="margin-top: 30px;padding: 10px;" onclick="print('html_render_div')">Print Document</button></center>
+				</div>
             </div>
-            <div>
+            <div style="margin-top: 20px;">
                 <label for="multimedia files">Add multimedia files</label>
                 <input type="checkbox" class="addFilesOrNot" onclick="showUploadBtns()" name="multimedia files" id="">
             </div>
             <div class="uploadBtns" style="display: none;">
                 <img id="myimg" src="" alt="">
                 <div class="">
-                    <button id="select" class="bg-[#6100C2]">Select</button>
+                    <button id="select">Select</button>
                     <div></div>
                     <label for="fileName">Before Uploading, Enter a valid file name</label><input name="fileName" id="namebox" type="text">
                 </div>
                 
                 <button id="upload">Upload</button>
             </div>
-            <center><button class="mt-10 mb-5">Save and Preview</button></center>
-        </div>
         </div>
         
         <script type="module">
@@ -144,9 +149,97 @@
                 }
             }
 
+            // Function to dynamically update the name in the heading
             document.getElementById("nameInForm").addEventListener("input", function () {
                 document.getElementById("person-name").innerHTML = document.getElementById("nameInForm").value;
             });
+
+            // Function to dynamically update the dob of the user
+            document.getElementById("dobInForm").addEventListener("input", function () {
+                ageCalculator();
+            });
+
+            function ageCalculator() {  
+                var userinput = document.getElementById("dobInForm").value;
+                var dob = new Date(userinput);
+                if(userinput==null || userinput=='') {
+                    document.getElementById("message").innerHTML = "**Choose a date please!"
+                    return false;
+                }
+                else {
+                    var month_diff = Date.now() - dob.getTime();
+                    var age_dt = new Date(month_diff);
+                    var year = age_dt.getUTCFullYear();
+                    var age = Math.abs(year - 1970);
+                    console.log("Age is: " + age + " years. ");
+                    document.getElementById("ageInForm").value = age;
+                }
+            }
+
+            // Function to toggle html and md divs
+			function toggleHtmlMd() {
+				toggleHtmlMdBtn = document.getElementById("mdhtmlbtn");
+				if(toggleHtmlMdBtn.innerText == "Render MarkDown"){
+					md2html();
+					toggleHtmlMdBtn.innerText = "Edit MarkDown";
+					document.getElementById("saveAndPrintDiv").style.display = "block";
+				}
+				else{
+					document.getElementById("saveAndPrintDiv").style.display = "none";
+					md_div = document.getElementById("md_text_div");
+					html_div = document.getElementById("html_render_div");
+					html_div.style.display = "none";
+					md_div.style.display = "block";
+					toggleHtmlMdBtn.innerText = "Render MarkDown";
+				}
+			}
+
+			// Function to convert md to html (using remarkable)
+			function md2html() {
+				var md = new Remarkable();
+				// console.log(md);
+				md_div = document.getElementById("md_text_div");
+				html_div = document.getElementById("html_render_div");
+				md__text = md_div.innerText;
+				// console.log(md__text);
+				// save(md__text);
+				html_div.innerHTML = md.render(md__text);
+				html_div.style.display = "block";
+				md_div.style.display = "none";
+			}
+
+			// Function to save  as pdf
+			function savePdf() {
+				var content = document.getElementById("html_render_div");
+				saveAsPdf("html_render_div");
+			}
+
+			function saveAsPdf(divId) {
+				var doc = new jsPDF();
+				doc.fromHTML(`<html><head><title>Memories</title></head><body>` + 
+					document.getElementById(divId).innerHTML + `</body></html>`);
+				doc.save('memories.pdf');
+			}
+
+			function print(divId) {
+				let mywindow = window.open('', 'PRINT', 'height=650,width=900,top=100,left=150');
+
+				mywindow.document.write(`<html><head><title>Memories</title>`);
+				mywindow.document.write('</head><body >');
+				mywindow.document.write(document.getElementById(divId).innerHTML);
+				mywindow.document.write('</body></html>');
+
+				mywindow.document.close(); // necessary for IE >= 10
+				mywindow.focus(); // necessary for IE >= 10*/
+				// The focus() method sets focus to a window.
+				// The blur() method removes focus from a window.
+
+				mywindow.print();
+				// The print() method prints the contents of the current window.
+				mywindow.close();
+				// open() and close() methods are used to open and close a window.
+				return true;
+			}
         </script>
     </body>
 </html>
