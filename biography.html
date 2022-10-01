@@ -8,27 +8,26 @@
     </head>
     <body>
         <div class="Biography">
-            <h1>Biography of <span id="person-name"></span></h1>
+            <center><h1>Biography of <span id="person-name"></span></h1></center>
             <div class="flex flex-col md:flex-row mt-10">
                 <label class="text-blue-500"> Enter the person's Name
                 </label>
                 <input class="p-2 md:ml-10 focus:outline-none rounded-lg
-                    h-[48px] md:w-[400px] " type="text" id="ancestor_name">
+                    h-[48px] md:w-[400px] " type="text" id="nameInForm">
             </div>
             <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-blue-500" for="ancestor_age"> Enter the person's Date of Birth
-                </label>
+                <label class="text-blue-500" for="ancestor_age"> Enter the person's Date of Birth</label>
                 <input class="p-2 md:ml-10 focus:outline-none rounded-lg
-                    h-[48px] md:w-[400px] " type="date" id="ancestor_name">
+                    h-[48px] md:w-[400px] " type="date" id="dobInForm">
             </div>
             <div class="flex flex-col md:flex-row mt-10">
                 <label class="text-blue-500" for="ancestor_birthday"> Age of the person </label>
                 <input disabled class="p-2 md:ml-10 focus:outline-none rounded-lg
-                    h-[48px] md:w-[400px] " type="number" id="ancestor_birthday">
+                    h-[48px] md:w-[400px] " type="number" id="ageInForm">
             </div>
             <div class="flex flex-col md:flex-row mt-10">
-                <label class="text-blue-500" for="ancestor_name"> A detailed biography about the person </label>
-                <textarea placeholder="MarkDown Support is also enabled"></textarea>
+                <label class="text-blue-500" for="biographyDetailed"> A detailed biography about the person </label><br>
+                <textarea name="biographyDetailed" placeholder="MarkDown Support is also enabled"></textarea>
             </div>
             <div>
                 <label for="multimedia files">Add multimedia files</label>
@@ -42,8 +41,6 @@
             </div>
             <center><button>Save and Preview</button></center>
         </div>
-
-
         
         <script type="module">
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
@@ -103,17 +100,21 @@
                     console.log('Uploaded the file successfully!');
                 });
             }
-    </script>
-    <script>
-        function showUploadBtns() {
-            var checkBox = document.querySelector(".addFilesOrNot");
-            var uploadBtns = document.querySelector(".uploadBtns");
-            if (checkBox.checked == true) {
-                uploadBtns.style.display = "block";
-            } else {
-                uploadBtns.style.display = "none";
+        </script>
+        <script>
+            function showUploadBtns() {
+                var checkBox = document.querySelector(".addFilesOrNot");
+                var uploadBtns = document.querySelector(".uploadBtns");
+                if (checkBox.checked == true) {
+                    uploadBtns.style.display = "block";
+                } else {
+                    uploadBtns.style.display = "none";
+                }
             }
-        }
-    </script>
+
+            document.getElementById("nameInForm").addEventListener("input", function () {
+                document.getElementById("person-name").innerHTML = document.getElementById("nameInForm").value;
+            });
+        </script>
     </body>
 </html>
