@@ -1,7 +1,10 @@
-<center><img src="assets/readme-assets/logo.png" width="400" height="250" /></center>
-<h1 align="center">Seeking Routes</h1>
+<div align="center">
+    <img src="assets/readme-assets/logo.png" width="400" height="250" />
+</div>
 
-<h2  align="center" id="description"><strong>Seeking Routes</strong> is a web-application where users can register themselves providing their basic details and write posts or stories about themselves(AutoBiographies) and also about their near and dear ones(Biographies).</h2>
+<h1 align="center">Seeking Roots</h1>
+
+<h2  align="center" id="description"><strong>Seeking Roots</strong> is a web-application where users can register themselves providing their basic details and write posts or stories about themselves (AutoBiographies) and also about their near and dear ones (Biographies).</h2>
 
 <h2>Features</h2>
 
@@ -14,10 +17,11 @@ Here're some of the project's major features:
 *   Upload multiimedia files and store it securely in the cloud(FireBase Storage).
 *   Generate a downloadable PDF file for the article written.
 
-<h2>For more details, check out all the planned features, completed targets and the pending targets [here](https://github.com/users/SSHSRN/projects/2/views/1)!</h2>
-<h2>Check out the deployed website at: https://sshsrn.github.io/DevJams-2022__Seeking-Roots</h2>
-<h2>Check out the Issues created for this project [here](https://github.com/SSHSRN/DevJams-2022__Seeking-Roots/issues)</h2>
-<h2>Check out the Pull Requests created for this project [here](https://github.com/SSHSRN/DevJams-2022__Seeking-Roots/pulls?q=is%3Apr+is%3Aclosed)</h2>
+## For more details, check out all the planned features, completed targets and the pending targets [here](https://github.com/users/SSHSRN/projects/2/views/1)!
+## Check out the deployed website [here](https://sshsrn.github.io/DevJams-2022__Seeking-Roots)
+## Check out the Issues created for this project [here](https://github.com/SSHSRN/DevJams-2022__Seeking-Roots/issues)
+## Check out the Pull Requests created for this project [here](https://github.com/SSHSRN/DevJams-2022__Seeking-Roots/pulls?q=is%3Apr+is%3Aclosed)
+
 
 <h2>Built with</h2>
 
