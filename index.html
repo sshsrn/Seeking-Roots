@@ -10,6 +10,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="functional.js"></script>
+        <script>
+            function toggle_visibility(){
+                var touch=document.getElementById('pswd');
+                if (x.type == "password") {
+                    touch.type = "text";
+                } else {
+                    touch.type = "password";
+                }
+                }
+        </script>
         <link rel="stylesheet" href="style.css">
         <title>SignUp LogIn page</title>
     </head>
@@ -82,7 +93,7 @@
                     </div>
                     <div class="flex flex-row mt-10 space-x-1">
                         <i class="far fa-eye cursor-pointer p-5 text-white" id="togglePassword" onclick="toggleeye()"></i>
-                        <i class="mt-3 cursor-pointer text-white">Show password</i>
+                        <i class="mt-3 cursor-pointer text-white" onclick="toggle_visibility()">Show password</i>
                     </div>
                     <div>
                         <label class="text-white" for="password">Select image type </label>
