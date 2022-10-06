@@ -2,7 +2,7 @@
     <img src="https://user-images.githubusercontent.com/70385488/192114009-0830321a-d227-4a4d-8411-6c03b54d7ce6.png" />
 </div>
 
-### This repository aims to help code beginners with their first successful pull request and open source contribution. :partying_face:
+### This repository aims to help code beginners with their first successful pull request and open-source contribution. :partying_face:
 
 :star: Feel free to use this project to make your first contribution to an open-source project on GitHub. Practice making your first pull request to a public repository before doing the real thing!
 
@@ -22,7 +22,7 @@ A month-long celebration from October 1st to October 31st presented by [Digital 
 
 <h1 align="center">Seeking Roots</h1>
 
-<h2  align="center" id="description"><strong>Seeking Roots</strong> is a web-application where users can register themselves providing their basic details and write posts or stories about themselves (AutoBiographies) and also about their near and dear ones (Biographies).</h2>
+<h2  align="center" id="description"><strong>Seeking Roots</strong> is a web application where users can register themselves, providing their basic details, and write posts or stories about themselves (AutoBiographies) and their near and dear ones (Biographies).</h2>
 
 <h2>Features</h2>
 
