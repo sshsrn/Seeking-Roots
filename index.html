@@ -33,11 +33,11 @@
                     <h2 class="text-[48px] pl-[30%] md:text-[50px] lg:text-[52px] text-white">LOGIN</h2>
                     <div class="flex md:flex-row flex-col mt-10">
                         <label class="text-white" for="username"> Enter your Email </label>
-                        <input class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " type="text" id="l-email">
+                        <input class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " type="text" id="l-email" placeholder="Enter Your Email">
                     </div>
                     <div class="flex md:flex-row flex-col mt-10">
                         <label class="text-white" for="password"> Enter your Password </label>
-                        <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px]" required="" id="l-password">
+                        <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px]" required="" id="l-password" placeholder="Enter Your Password" >
                     </div>
                     <div class="flex flex-row mt-10 space-x-1">
                         <i class="far text-white fa-eye cursor-pointer p-5" id="togglePassword" onclick="toggleeye()"></i>
@@ -72,23 +72,24 @@
             <div class="h-1000px w-screen shadow-xl bg-[#6100C2] pt-10">
                 <div class="border-2 border-black rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] bg-[#8b62b5] lg:mr-[25%] ">
                     <center><h2 class="text-[48px] md:text-[50px] lg:text-[52px] text-white">SIGN UP</h2></center>
+                    <p class=" text-center font-black" >Please fill in this form to create an account</p>
                     <!-- <img src="https://api.multiavatar.com/a.png" alt="" srcset=""> -->
                     <div class="flex md:flex-row flex-col mt-10">
-                        <label class="text-white" for="name"> Enter your Name </label>
-                        <input type="text" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-name" name="name">
+                        <label class="text-white" for="name"> Enter Name </label>
+                        <input type="text" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-name" name="name" placeholder="Enter Your Name">
                     </div>
                     <div class="flex md:flex-row flex-col mt-10">
-                        <label class="text-white" for="email"> Enter your Email </label>
-                        <input type="email" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " id="s-email" required="" name="email">
+                        <label class="text-white" for="email"> Enter Email </label>
+                        <input type="email" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " id="s-email" required="" name="email"placeholder="Enter Your Email">
                     </div>
                     <div class="flex md:flex-row flex-col mt-10">
                         <label class="text-white" for="password"> Set a Password </label>
-                        <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-password"
+                        <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-password" placeholder="Enter password"
                             name="password">
                     </div>
                     <div class="flex md:flex-row flex-col mt-10">
                         <label class="text-white" for="password"> Confirm Password </label>
-                        <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-password"
+                        <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-password" placeholder="Repeat  password"
                             name="password">
                     </div>
                     <div class="flex flex-row mt-10 space-x-1">
