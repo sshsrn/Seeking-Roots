@@ -1,171 +1,222 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="functional.js"></script>
-        <script>
-            function toggle_visibility(){
-                var touch=document.getElementById('pswd');
-                if (x.type == "password") {
-                    touch.type = "text";
-                } else {
-                    touch.type = "password";
-                }
-                }
-        </script>
-        <link rel="stylesheet" href="style.css">
-        <title>SignUp LogIn page</title>
-    </head>
-    <body>
-        
-        <!-- Login div -->
-        <div id="loginDiv" style="display: none;">
-            <div class="h-screen w-screen   bg-[#6100C2] pt-10">
-                <div class="border-2 border-black  rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] lg:mr-[25%] mt-10 bg-[#8b62b5] ">
-                    <h2 class="text-[48px] pl-[30%] md:text-[50px] lg:text-[52px] text-white">LOGIN</h2>
-                    <div class="flex md:flex-row flex-col mt-10">
-                        <label class="text-white" for="username"> Enter your Email </label>
-                        <input class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " type="text" id="l-email" placeholder="Enter Your Email">
-                    </div>
-                    <div class="flex md:flex-row flex-col mt-10">
-                        <label class="text-white" for="password"> Enter your Password </label>
-                        <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px]" required="" id="l-password" placeholder="Enter Your Password" >
-                    </div>
-                    <div class="flex flex-row mt-10 space-x-1">
-                        <i class="far text-white fa-eye cursor-pointer p-5" id="togglePassword" onclick="toggleeye()"></i>
-                        <i class="mt-3 text-white cursor-pointer">Show password</i>
-                    </div>
-                    <div class="mt-10">
-                        <center>
-                            <a href="#_" id="login" type="submit" class="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
-                                <span class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
-                                <span class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
-                                <span class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                                <span class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                                <span class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
-                                <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
-                                    Login
-                                </span>
-                            </a>
-                        </center>
-                    </div>
-                    <p class="mt-2 mb-4 text-[14px] text-gray-900">
-                        <span> Not a member? </span>
-                        <a style="cursor: pointer;" onclick="toggleSignupLogin()">
-                            Sign up 
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
 
-        <!-- SignUp div -->
-        <div class="signUpDiv" id="signUpDiv">
-            <div class="h-1000px w-screen shadow-xl bg-[#6100C2] pt-10">
-                <div class="border-2 border-black rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] bg-[#8b62b5] lg:mr-[25%] ">
-                    <center><h2 class="text-[48px] md:text-[50px] lg:text-[52px] text-white">SIGN UP</h2></center>
-                    <p class=" text-center font-black" >Please fill in this form to create an account</p>
-                    <!-- <img src="https://api.multiavatar.com/a.png" alt="" srcset=""> -->
-                    <div class="flex md:flex-row flex-col mt-10">
-                        <label class="text-white" for="name"> Enter Name </label>
-                        <input type="text" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-name" name="name" placeholder="Enter Your Name">
-                    </div>
-                    <div class="flex md:flex-row flex-col mt-10">
-                        <label class="text-white" for="email"> Enter Email </label>
-                        <input type="email" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " id="s-email" required="" name="email"placeholder="Enter Your Email">
-                    </div>
-                    <div class="flex md:flex-row flex-col mt-10">
-                        <label class="text-white" for="password"> Set a Password </label>
-                        <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-password" placeholder="Enter password"
-                            name="password">
-                    </div>
-                    <div class="flex md:flex-row flex-col mt-10">
-                        <label class="text-white" for="password"> Confirm Password </label>
-                        <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " required="" id="s-password" placeholder="Repeat  password"
-                            name="password">
-                    </div>
-                    <div class="flex flex-row mt-10 space-x-1">
-                        <i class="far fa-eye cursor-pointer p-5 text-white" id="togglePassword" onclick="toggleeye()"></i>
-                        <i class="mt-3 cursor-pointer text-white" onclick="toggle_visibility()">Show password</i>
-                    </div>
-                    <div>
-                        <label class="text-white" for="password">Select image type </label>
-                        <select onchange="checkDisplay('APIimage');checkDisplay('uploadImg')" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " name="" id="profile-pic-type">
-                            <option value="generate">Generate Random image</option>
-                            <option value="upload">Upload Profile Picture</option>
-                        </select>
-                    </div>
-                    <div id="APIimage">
-                        <label class="text-white" for="password">Select</label>
-                        <select class="p-2 md:ml-10 focus:outline-none  mt-10 rounded-lg h-[48px] md:w-[400px] " name="" id="profile-pic">
-                            <option value="grav">Gravatar</option>
-                            <option value="rand">Random Avatar</option>
-                        </select>
-                    </div>
-                    <div id="uploadImg" style="display: none;">
-                        <button>Upload image</button>
-                    </div>
-                    <div class="mt-10">
-                        <center><button id="signUp" type="submit" class="p-2 text-[32px] bg-blue-500 rounded-md" > Sign Up </button></center>
-                    </div>
-                    <p class="mt-2 mb-4 text-[14px] text-gray-900">
-                        <span> Already have an account? </span>
-                        <a style="cursor: pointer;" onclick="toggleSignupLogin()">
-                            Sign in 
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Firebase config -->
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-            import { getDatabase, set, ref, update, onValue, get, child } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
-            import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
-
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-          
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-              apiKey: "AIzaSyAPX3OteU8Ym8pGNGS7ye_MW2e0TtgItl4",
-              authDomain: "seekingroots-5d4e8.firebaseapp.com",
-              projectId: "seekingroots-5d4e8",
-              storageBucket: "seekingroots-5d4e8.appspot.com",
-              messagingSenderId: "964695803699",
-              appId: "1:964695803699:web:421793f49da7379361a046",
-              measurementId: "G-407NY13GGN"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-            const auth = getAuth();
-            const database = getDatabase(app);
-            console.log("Firebase initialised");
-
-            function generateUniqueKey(email) {
-                var k = email.split('.')[0] + '-' + Math.floor(Math.random()*100000);
-                // Math.floor(Math.random()*100000) => generates a random 5 digit number
-                return k;
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="functional.js"></script>
+    <script>
+        function toggle_visibility() {
+            var touch = document.getElementById('pswd');
+            if (x.type == "password") {
+                touch.type = "text";
+            } else {
+                touch.type = "password";
             }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <!-- navbar css -->
+    <link rel="stylesheet" href="navbar.css">
+    <title>SignUp LogIn page</title>
+</head>
 
-            async function getUniqueKey(email){
-                const dbRef = ref(database);
-                let k1 = "";
-                await get(child(dbRef, `users/` + email.split('.')[0])).then(async (snapshot) => {
+<body>
+    <!-- Navbar section start navbar-secondary bg-secondary -->
+    <nav class="navbar navbar-expand-lg  sticky-top" style="background-color: rgb(210, 170, 135);">
+        <div class="container-fluid">
+            <a href="#" > <img src="./assets//images/logo1.jpg" class="logo" alt=""> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto  mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#loginDiv">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#signUpDiv">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">About Us</a>
+                    </li>
+                    
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar section end -->
+
+    <!-- Login div -->
+    <div id="loginDiv" style="display: none;">
+        <div class="h-screen w-screen   bg-[#6100C2] pt-10">
+            <div
+                class="border-2 border-black  rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] lg:mr-[25%] mt-10 bg-[#8b62b5] ">
+                <h2 class="text-[48px] pl-[30%] md:text-[50px] lg:text-[52px] text-white">LOGIN</h2>
+                <div class="flex md:flex-row flex-col mt-10">
+                    <label class="text-white" for="username"> Enter your Email </label>
+                    <input class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " type="text"
+                        id="l-email" placeholder="Enter Your Email">
+                </div>
+                <div class="flex md:flex-row flex-col mt-10">
+                    <label class="text-white" for="password"> Enter your Password </label>
+                    <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px]"
+                        required="" id="l-password" placeholder="Enter Your Password">
+                </div>
+                <div class="flex flex-row mt-10 space-x-1">
+                    <i class="far text-white fa-eye cursor-pointer p-5" id="togglePassword" onclick="toggleeye()"></i>
+                    <i class="mt-3 text-white cursor-pointer">Show password</i>
+                </div>
+                <div class="mt-10">
+                    <center>
+                        <a href="#_" id="login" type="submit"
+                            class="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
+                            <span
+                                class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
+                            <span
+                                class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                            <span
+                                class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
+                            <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
+                                Login
+                            </span>
+                        </a>
+                    </center>
+                </div>
+                <p class="mt-2 mb-4 text-[14px] text-gray-900">
+                    <span> Not a member? </span>
+                    <a style="cursor: pointer;" onclick="toggleSignupLogin()">
+                        Sign up
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SignUp div -->
+    <div class="signUpDiv" id="signUpDiv">
+        <div class="h-1000px w-screen shadow-xl bg-[#6100C2] pt-10">
+            <div class="border-2 border-black rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] bg-[#8b62b5] lg:mr-[25%] ">
+                <center>
+                    <h2 class="text-[48px] md:text-[50px] lg:text-[52px] text-white">SIGN UP</h2>
+                </center>
+                <p class=" text-center font-black">Please fill in this form to create an account</p>
+                <!-- <img src="https://api.multiavatar.com/a.png" alt="" srcset=""> -->
+                <div class="flex md:flex-row flex-col mt-10">
+                    <label class="text-white" for="name"> Enter Name </label>
+                    <input type="text" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] "
+                        required="" id="s-name" name="name" placeholder="Enter Your Name">
+                </div>
+                <div class="flex md:flex-row flex-col mt-10">
+                    <label class="text-white" for="email"> Enter Email </label>
+                    <input type="email" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] "
+                        id="s-email" required="" name="email" placeholder="Enter Your Email">
+                </div>
+                <div class="flex md:flex-row flex-col mt-10">
+                    <label class="text-white" for="password"> Set a Password </label>
+                    <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] "
+                        required="" id="s-password" placeholder="Enter password" name="password">
+                </div>
+                <div class="flex md:flex-row flex-col mt-10">
+                    <label class="text-white" for="password"> Confirm Password </label>
+                    <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] "
+                        required="" id="s-password" placeholder="Repeat  password" name="password">
+                </div>
+                <div class="flex flex-row mt-10 space-x-1">
+                    <i class="far fa-eye cursor-pointer p-5 text-white" id="togglePassword" onclick="toggleeye()"></i>
+                    <i class="mt-3 cursor-pointer text-white" onclick="toggle_visibility()">Show password</i>
+                </div>
+                <div>
+                    <label class="text-white" for="password">Select image type </label>
+                    <select onchange="checkDisplay('APIimage');checkDisplay('uploadImg')"
+                        class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " name=""
+                        id="profile-pic-type">
+                        <option value="generate">Generate Random image</option>
+                        <option value="upload">Upload Profile Picture</option>
+                    </select>
+                </div>
+                <div id="APIimage">
+                    <label class="text-white" for="password">Select</label>
+                    <select class="p-2 md:ml-10 focus:outline-none  mt-10 rounded-lg h-[48px] md:w-[400px] " name=""
+                        id="profile-pic">
+                        <option value="grav">Gravatar</option>
+                        <option value="rand">Random Avatar</option>
+                    </select>
+                </div>
+                <div id="uploadImg" style="display: none;">
+                    <button>Upload image</button>
+                </div>
+                <div class="mt-10">
+                    <center><button id="signUp" type="submit" class="p-2 text-[32px] bg-blue-500 rounded-md"> Sign Up
+                        </button></center>
+                </div>
+                <p class="mt-2 mb-4 text-[14px] text-gray-900">
+                    <span> Already have an account? </span>
+                    <a style="cursor: pointer;" onclick="toggleSignupLogin()">
+                        Sign in
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase config -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+        import { getDatabase, set, ref, update, onValue, get, child } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAPX3OteU8Ym8pGNGS7ye_MW2e0TtgItl4",
+            authDomain: "seekingroots-5d4e8.firebaseapp.com",
+            projectId: "seekingroots-5d4e8",
+            storageBucket: "seekingroots-5d4e8.appspot.com",
+            messagingSenderId: "964695803699",
+            appId: "1:964695803699:web:421793f49da7379361a046",
+            measurementId: "G-407NY13GGN"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+        const database = getDatabase(app);
+        console.log("Firebase initialised");
+
+        function generateUniqueKey(email) {
+            var k = email.split('.')[0] + '-' + Math.floor(Math.random() * 100000);
+            // Math.floor(Math.random()*100000) => generates a random 5 digit number
+            return k;
+        }
+
+        async function getUniqueKey(email) {
+            const dbRef = ref(database);
+            let k1 = "";
+            await get(child(dbRef, `users/` + email.split('.')[0])).then(async (snapshot) => {
                 if (await snapshot.exists()) {
                     const data = await snapshot.val();
                     console.log("data from firebase", data);
@@ -175,181 +226,191 @@
                 } else {
                     console.log("No data available");
                 }
-                }).catch((error) => {
-                    console.error(error);
+            }).catch((error) => {
+                console.error(error);
+            });
+            console.log("Last line of fn", k1);
+            return k1;
+        }
+
+        // Function to select image
+        function selectImage() {
+            var e = document.getElementById("profile-pic");
+            selected = e.options[e.selectedIndex].text;
+            console.log(selected);
+            var ppurl;
+            if (selected === "Random Avatar") {
+                ppurl = "https://api.multiavatar.com/" + Math.random().toString(26).slice(2) + ".png"
+            }
+            else if (selected === "Gravatar") {
+                ppurl = "https://www.gravatar.com/avatar/" + Math.random().toString(16).slice(2) + "?s=100&d=retro";
+            }
+            console.log(ppurl);
+            return ppurl;
+        }
+
+        // Signup with email and password
+        signUp.addEventListener('click', async (e) => {
+            var email = document.getElementById("s-email").value;
+            // console.log(email);
+            var password = document.getElementById("s-password").value;
+            // console.log(password);
+            var name = document.getElementById("s-name").value;
+            // console.log(name);
+            var profilePicUrl = await selectImage();
+            // console.log(profilePicUrl);
+            var uniqueKey = generateUniqueKey(email);
+            // console.log(uniqueKey);
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(async (userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    await set(ref(database, 'users/' + email.split('.')[0]), {
+                        email: email,
+                        name: name,
+                        key: uniqueKey,
+                        lastLogin: Date.now(),
+                        accountCreated: Date.now(),
+                        profilePicUrl: profilePicUrl,
+                        authUsers: Array("sshsrn@gmail.com"),
+                    });
+                    // Never save password to the database.
+                    console.log("Created account Successfully!");
+                    // window.location.replace("index1.html");
+
+                    var url = await new URL(window.location.href);
+                    var newUrl = await new URL('index1.html', url);
+                    newUrl.searchParams.append('user', uniqueKey);
+                    console.log("after adding parameters: ", newUrl);
+                    // By default, @ is represented as %40
+                    newUrl.href = newUrl.href.replace("%40", "@");
+                    console.log("Url to open:", newUrl);
+                    await window.open(newUrl);
+                    console.log(window.location.href);
+                    await localStorage.setItem("childOpen", true);
+                    window.location.replace("index2.html");
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                    // ..
                 });
-                console.log("Last line of fn", k1);
-                return k1;
-            }
+        });
 
-            // Function to select image
-            function selectImage() {
-                var e = document.getElementById("profile-pic");
-                selected = e.options[e.selectedIndex].text;
-                console.log(selected);
-                var ppurl;
-                if(selected === "Random Avatar") {
-                    ppurl = "https://api.multiavatar.com/" + Math.random().toString(26).slice(2) + ".png"
-                }
-                else if(selected === "Gravatar") {
-                    ppurl = "https://www.gravatar.com/avatar/" + Math.random().toString(16).slice(2) + "?s=100&d=retro";
-                }
-                console.log(ppurl);
-                return ppurl;
-            }
-
-            // Signup with email and password
-            signUp.addEventListener('click', async(e) => {
-                var email = document.getElementById("s-email").value;
-                // console.log(email);
-                var password = document.getElementById("s-password").value;
-                // console.log(password);
-                var name =  document.getElementById("s-name").value;
-                // console.log(name);
-                var profilePicUrl = await selectImage();
-                // console.log(profilePicUrl);
-                var uniqueKey = generateUniqueKey(email);
-                // console.log(uniqueKey);
-                createUserWithEmailAndPassword(auth, email, password)
-                    .then(async (userCredential) => {
-                        // Signed in 
-                        const user = userCredential.user;
-                        await set(ref(database,'users/' + email.split('.')[0]), {
-                            email: email,
-                            name: name,
-                            key: uniqueKey,
-                            lastLogin: Date.now(),
-                            accountCreated: Date.now(),
-                            profilePicUrl: profilePicUrl,
-                            authUsers: Array("sshsrn@gmail.com"),
-                        });
-                        // Never save password to the database.
-                        console.log("Created account Successfully!");
-                        // window.location.replace("index1.html");
-
-                        var url = await new URL(window.location.href);
-                        var newUrl = await new URL('index1.html', url);
-                        newUrl.searchParams.append('user', uniqueKey);
-                        console.log("after adding parameters: ",newUrl);
-                        // By default, @ is represented as %40
-                        newUrl.href = newUrl.href.replace("%40","@");
-                        console.log("Url to open:", newUrl);
-                        await window.open(newUrl);
-                        console.log(window.location.href);
-                        await localStorage.setItem("childOpen", true);
-                        window.location.replace("index2.html");
-                    })
-                    .catch((error) => {
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
-                        alert(errorMessage);
-                        // ..
+        // Login with email and password
+        login.addEventListener('click', async (e) => {
+            var email = document.getElementById("l-email").value;
+            // console.log(email);
+            var password = document.getElementById("l-password").value;
+            // console.log(password);
+            console.log("email", email);
+            // Get unique key from database
+            var uniqueKey = await getUniqueKey(email);
+            console.log("in eventlistener", await uniqueKey);
+            signInWithEmailAndPassword(auth, email, password)
+                .then(async (userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    await update(ref(database, 'users/' + email.split('.')[0]), {
+                        lastLogin: Date.now(),
                     });
-            });
-    
-            // Login with email and password
-            login.addEventListener('click', async (e) => {
-                var email = document.getElementById("l-email").value;
-                // console.log(email);
-                var password = document.getElementById("l-password").value;
-                // console.log(password);
-                console.log("email", email);
-                // Get unique key from database
-                var uniqueKey = await getUniqueKey(email);
-                console.log("in eventlistener",await uniqueKey);
-                signInWithEmailAndPassword(auth, email, password)
-                    .then(async(userCredential) => {
-                        // Signed in 
-                        const user = userCredential.user;
-                        await update(ref(database,'users/' + email.split('.')[0]), {
-                            lastLogin: Date.now(),
-                        });
-                        // ...
-                        console.log("User logged in Successfully!");
-                        // window.location.replace("index1.html");
-
-                        var url = await new URL(window.location.href);
-                        var newUrl = await new URL('index1.html', url);
-                        newUrl.searchParams.append('user', uniqueKey);
-                        // By default, @ is represented as %40
-                        newUrl.href = newUrl.href.replace("%40","@");
-                        // console.log(url.href);
-                        // window.location.href = url.href;
-                        console.log("Url to open:", newUrl);
-                        await window.open(newUrl.href,"_blank");
-                        console.log(window.location.href);
-                        await localStorage.setItem("childOpen", true);
-                        window.location.replace("index2.html");
-                    })
-                    .catch((error) => {
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
-                        alert(errorMessage);
-                    });
-            });
-    
-            const user = auth.currentUser;
-            onAuthStateChanged(auth, async(user) => {
-                if (user) {
-                    // User is signed in, see docs for a list of available properties
-                    // https://firebase.google.com/docs/reference/js/firebase.User
-                    const uid = user.uid;
-                    console.log(user);
-                    console.log("local storage value: ",localStorage.getItem("childOpen"));
-                    if(await localStorage.getItem("childOpen")){
-                        console.log("Tab is open");
-                        window.location.replace("index2.html");
-                    }
-                    else{
-                        console.log("Tab is not open");
-                    }
-                    // When user is signed in, do not go to signin signup page
-                    // window.location.replace("index2.html");
                     // ...
-                } else {
-                    // User is signed out
-                    // ...
-                }
-            });
-        </script>
-        <script>
+                    console.log("User logged in Successfully!");
+                    // window.location.replace("index1.html");
 
-            var selected;
+                    var url = await new URL(window.location.href);
+                    var newUrl = await new URL('index1.html', url);
+                    newUrl.searchParams.append('user', uniqueKey);
+                    // By default, @ is represented as %40
+                    newUrl.href = newUrl.href.replace("%40", "@");
+                    // console.log(url.href);
+                    // window.location.href = url.href;
+                    console.log("Url to open:", newUrl);
+                    await window.open(newUrl.href, "_blank");
+                    console.log(window.location.href);
+                    await localStorage.setItem("childOpen", true);
+                    window.location.replace("index2.html");
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                });
+        });
 
-            function toggleSignupLogin() {
-                a = document.getElementById("signUpDiv");
-                b = document.getElementById("loginDiv");
-                if(a.style.display == "none"){
-                    a.style.display = "block";
-                    b.style.display = "none";
+        const user = auth.currentUser;
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
+                const uid = user.uid;
+                console.log(user);
+                console.log("local storage value: ", localStorage.getItem("childOpen"));
+                if (await localStorage.getItem("childOpen")) {
+                    console.log("Tab is open");
+                    window.location.replace("index2.html");
                 }
-                else{
-                    a.style.display = "none";
-                    b.style.display = "block";
-                }
-            }
-            function toggleeye() {
-                var x = document.getElementById("s-password");
-                var y =document.getElementById("l-password");
-                if (x.type === "password" || y.type==="password") {
-                    x.type = "text";
-                    y.type="text";
-                } 
                 else {
-                    x.type = "password";
-                    y.type="password";
+                    console.log("Tab is not open");
                 }
+                // When user is signed in, do not go to signin signup page
+                // window.location.replace("index2.html");
+                // ...
+            } else {
+                // User is signed out
+                // ...
             }
+        });
+    </script>
+    <script>
 
-            function checkDisplay(x) {
-                var a = document.getElementById(x);
-                if (a.style.display === "none") {
-                    a.style.display = "block";
-                } 
-                else {
-                    a.style.display = "none";
-                }
+        var selected;
+
+        function toggleSignupLogin() {
+            a = document.getElementById("signUpDiv");
+            b = document.getElementById("loginDiv");
+            if (a.style.display == "none") {
+                a.style.display = "block";
+                b.style.display = "none";
             }
-        </script>
-    </body>
+            else {
+                a.style.display = "none";
+                b.style.display = "block";
+            }
+        }
+        function toggleeye() {
+            var x = document.getElementById("s-password");
+            var y = document.getElementById("l-password");
+            if (x.type === "password" || y.type === "password") {
+                x.type = "text";
+                y.type = "text";
+            }
+            else {
+                x.type = "password";
+                y.type = "password";
+            }
+        }
+
+        function checkDisplay(x) {
+            var a = document.getElementById(x);
+            if (a.style.display === "none") {
+                a.style.display = "block";
+            }
+            else {
+                a.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- bootstrap cdn link -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+</body>
+
 </html>
