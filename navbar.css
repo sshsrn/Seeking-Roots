@@ -5,12 +5,17 @@ body{
     box-sizing: border-box;
     overflow-x: hidden;
 }
+html{
+    scroll-behavior: smooth;
+}
 .navbar{
- box-shadow: 0 0.1rem 0.3rem rgb(0 0 0 / 30%)
+ box-shadow: 0 0.1rem 0.3rem rgb(0 0 0 / 30%);
+ background-color: #575fcf;
+ 
 }
 .navbar ul li a{
     font-size: 1.2rem;
-    color:#666;
+  color: #fff;
     font-family:  'Baloo 2', cursive;
 }
 .navbar ul li a:hover{
