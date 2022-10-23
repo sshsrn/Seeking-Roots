@@ -4,19 +4,15 @@
     
 }
 
-#signUpDiv .flex-col {
+#signUpDiv .flex-col,
+#APIimage,
+#imageType {
     align-items: center;
 }
 
-#APIimage {
-    align-items: center;
-}
-
-#APIimage > *:nth-child(1) {
-    flex: 0 0 22%;
-}
-
-#signUpDiv .flex-col > *:nth-child(1) {
+#signUpDiv .flex-col > *:nth-child(1),
+#APIimage > *:nth-child(1),
+#imageType > *:nth-child(1) {
     flex: 0 0 22%;
 }
 
