@@ -36,7 +36,7 @@ Here're some of the project's major features:
 *   Generate a downloadable PDF file for the article written.
 
 ## For more details, check out all the planned features, completed targets and the pending targets [here](https://github.com/users/SSHSRN/projects/2/views/1)!
-## Check out the deployed website [here](https://sshsrn.github.io/DevJams-2022__Seeking-Roots)
+## Check out the deployed website [here](https://sshsrn.github.io/Seeking-Roots)
 ## Check out the Issues created for this project [here](https://github.com/SSHSRN/DevJams-2022__Seeking-Roots/issues)
 ## Check out the Pull Requests created for this project [here](https://github.com/SSHSRN/DevJams-2022__Seeking-Roots/pulls?q=is%3Apr+is%3Aclosed)
 
