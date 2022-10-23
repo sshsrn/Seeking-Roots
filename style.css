@@ -3,3 +3,16 @@
     font-family: 'Inter Tight', sans-serif;
     
 }
+
+#signUpDiv .flex-col,
+#APIimage,
+#imageType {
+    align-items: center;
+}
+
+#signUpDiv .flex-col > *:nth-child(1),
+#APIimage > *:nth-child(1),
+#imageType > *:nth-child(1) {
+    flex: 0 0 22%;
+}
+
