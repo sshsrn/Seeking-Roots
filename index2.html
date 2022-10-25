@@ -1,73 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Google fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="index2.css">
-        <title>About Us Page</title>
-        <link rel="icon" type="image/x-icon" href="assets/logo.ico">
-    </head>
-    <body>
-        <div class="container">
-            <div class="about-text">
-                <h1>About us</h1>
-                <p>We are accredited developers, engineers and trainers to the highest of Seeking Roots professional standards. We pride ourselves on understanding your business’s technical needs and subsequently pairing these needs with a service or system offering that is flexible, yet affordable whilst maintaining the utmost standards of customer care and professionalism in everything we do.</p>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index2.css">
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <!-- navbar nad footer css -->
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>About Us Page</title>
+</head>
+
+<body>
+    <!-- Navbar section start navbar-secondary bg-secondary -->
+    <nav class="navbar navbar-expand-lg  sticky-top" style="background-color: rgb(210, 170, 135);">
+        <div class="container-fluid">
+            <a href="#"> <img src="./assets//images/logo1.jpg" class="logo" alt=""> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">About Us</a>
+                    </li>
+
+
+
+                </ul>
             </div>
-            <div class="about-image">
-                <div id="circle">
-                    <img src="assets/about-us-people.png" alt="about-us">
+        </div>
+    </nav>
+    <!-- Navbar section end -->
+    <div class="container">
+        <div class="about-text">
+            <h1>About us</h1>
+            <p>We are accredited developers, engineers and trainers to the highest of Seeking Roots professional
+                standards. We pride ourselves on understanding your business’s technical needs and subsequently pairing
+                these needs with a service or system offering that is flexible, yet affordable whilst maintaining the
+                utmost standards of customer care and professionalism in everything we do.</p>
+        </div>
+        <div class="about-image">
+            <div id="circle">
+                <img src="assets/about-us-people.png" alt="about-us">
+            </div>
+        </div>
+    </div>
+     <!-- footer section start -->
+     <footer class="footer">
+        <div class="containeer">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>More</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Language</h4>
+                    <ul>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Hindi</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </footer>
 
-        <!-- Firebase config -->
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-            import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+    <!-- footer section end -->
 
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-          
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-              apiKey: "AIzaSyAPX3OteU8Ym8pGNGS7ye_MW2e0TtgItl4",
-              authDomain: "seekingroots-5d4e8.firebaseapp.com",
-              projectId: "seekingroots-5d4e8",
-              storageBucket: "seekingroots-5d4e8.appspot.com",
-              messagingSenderId: "964695803699",
-              appId: "1:964695803699:web:421793f49da7379361a046",
-              measurementId: "G-407NY13GGN"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-            const auth = getAuth();
-            console.log("Firebase initialised");
-    
-            const user = auth.currentUser;
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    // User is signed in, see docs for a list of available properties
-                    // https://firebase.google.com/docs/reference/js/firebase.User
-                    const uid = user.uid;
-                    console.log(user);
-                    // When user is signed in, do nothing.
-                    // ...
-                } else {
-                    // User is signed out
-                    // ...
-                    window.location.replace("index.html");
-                }
-            });
-          </script>
-    </body>
+
+    <!-- Firebase config -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAPX3OteU8Ym8pGNGS7ye_MW2e0TtgItl4",
+            authDomain: "seekingroots-5d4e8.firebaseapp.com",
+            projectId: "seekingroots-5d4e8",
+            storageBucket: "seekingroots-5d4e8.appspot.com",
+            messagingSenderId: "964695803699",
+            appId: "1:964695803699:web:421793f49da7379361a046",
+            measurementId: "G-407NY13GGN"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+        console.log("Firebase initialised");
+
+        const user = auth.currentUser;
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
+                const uid = user.uid;
+                console.log(user);
+                // When user is signed in, do nothing.
+                // ...
+            } else {
+                // User is signed out
+                // ...
+                window.location.replace("index.html");
+            }
+        });
+    </script>
+
+    <!-- bootstrap cdn link -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>

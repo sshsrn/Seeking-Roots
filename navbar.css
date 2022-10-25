@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Balsamiq+Sans&family=Piazzolla:opsz,wght@8..30,200;8..30,300;8..30,400;8..30,900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.navbar{
+ box-shadow: 0 0.1rem 0.3rem rgb(0 0 0 / 30%)
+}
+.navbar ul li a{
+    font-size: 1.2rem;
+    color:#666;
+    font-family:  'Baloo 2', cursive;
+}
+.navbar ul li a:hover{
+    color: #0d9979;
+}
+.navbar .logo{
+    color: #666;
+    height: 43px;
+    width: 46px;
+    border-radius: 27px;
+    margin-left: 32px;
+}
