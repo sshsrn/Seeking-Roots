@@ -5,11 +5,15 @@
 body{
     background-color:#fefefe;
     background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(251,8,8,1) 16%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(204, 3, 3) 16%, rgb(0, 89, 255) 100%);
 }
 .nav-bar{
     background-color: black;
     padding: 10px;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 40%);
+    background: linear-gradient(to bottom right, #000000 0%, #01110c 100%);
+    border-bottom: 2px white solid;
+    border-top: 2px white solid;
     
 }
 .nav-bar a {
@@ -20,6 +24,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(251,8,8,1) 16%, rgba(
     margin: 20px;  
     border: 2px solid white;
     border-radius: 5px;
+   
  
   
     
@@ -48,18 +53,21 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(251,8,8,1) 16%, rgba(
     
 }
 .heading h1{
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 900;
     text-align: left;
+    color: white;
     
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.92);
 }
 .heading p{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     
-    color: rgb(5, 5, 5);
+    color: rgb(255, 255, 255);
     padding-top: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.92);
 }
 
 
