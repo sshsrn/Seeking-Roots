@@ -10,7 +10,10 @@ html{
 }
 .navbar{
  box-shadow: 0 0.1rem 0.3rem rgb(0 0 0 / 30%);
- background-color: #575fcf;
+ box-shadow: 0 3px 5px rgb(0 0 0 / 40%);
+    background: linear-gradient(to bottom right, #041c40 0%, #0b1a62 100%);
+    border-bottom: 2px white solid;
+    border-top: 2px white solid;
  
 }
 .navbar ul li a{
