@@ -79,7 +79,7 @@
                     <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px]"
                         required="" id="l-password" placeholder="Enter Your Password">
                 </div>
-                <div class="flex flex-row mt-10 space-x-1">
+                <div class=" flex-row mt-10 space-x-1">
                     <i class="far text-white fa-eye cursor-pointer p-5" id="togglePassword" onclick="toggleeye()"></i>
                     <i class="mt-3 text-white cursor-pointer">Show password</i>
                 </div>
@@ -115,38 +115,35 @@
 
     <!-- SignUp div -->
     <div class="signUpDiv" id="signUpDiv">
-        <div class="h-1000px w-screen shadow-xl bg-[#6100C2] pt-10">
-            <div class="border-2 border-black rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] bg-[#8b62b5] lg:mr-[25%]  ">
+        <div class="h-1000px w-screen shadow-xl bg-[#212121] pt-10">
+            <div class="border-2 border-black rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] bg-[#16537e] lg:mr-[25%]  ">
                 <center>
                     <h2 class="text-[48px] md:text-[50px] lg:text-[52px] text-white">SIGN UP</h2>
                 </center>
-                <p class=" text-center font-black">Please fill in this form to create an account</p>
+                <p class="text-center font-white">Please fill in this form to create an account</p>
                 <!-- <img src="https://api.multiavatar.com/a.png" alt="" srcset=""> -->
                 <div class="flex md:flex-row flex-col mt-10">
                     <label class="text-white" for="name"> Enter Name </label>
                     <input type="text" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] "
-                        required="" id="s-name" name="name" placeholder="Enter Your Name">
+                        required="required" id="s-name" name="name" placeholder="Enter Your Name">
                 </div>
                 <div class="flex md:flex-row flex-col mt-10">
                     <label class="text-white" for="email"> Enter Email </label>
                     <input type="email" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] "
-                        id="s-email" required="" name="email" placeholder="Enter Your Email">
+                        id="s-email" required="required" name="email" placeholder="Enter Your Email">
                 </div>
                 <div class="flex md:flex-row flex-col mt-10">
                     <label class="text-white" for="password"> Set a Password </label>
                     <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] "
-                        required="" id="s-password" placeholder="Enter password" name="password">
+                        required="required" id="s-password" placeholder="Enter your password" name="password">
+                        <i class="far fa-eye cursor-pointer p-5 text-white" id="togglePassword" onclick="toggleeye()"></i>
                 </div>
-                <div class="flex md:flex-row flex-col mt-10">
+                <div class="flex md:flex-row flex-col mt-10 space-x-1">
                     <label class="text-white" for="password"> Confirm Password </label>
                     <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] "
-                        required="" id="s-password" placeholder="Re-enter your password" name="password">
+                        required="required" id="s-password" placeholder="Re-enter your password" name="password">
                 </div>
-                <div class="flex flex-row mt-10 space-x-1">
-                    <i class="far fa-eye cursor-pointer p-5 text-white" id="togglePassword" onclick="toggleeye()"></i>
-                    <i class="mt-3 cursor-pointer text-white" onclick="toggle_visibility()">Show password</i>
-                </div>
-                <div>
+                <div class="flex md:flex-row flex-col mt-10 space-x-1">
                     <label class="text-white" for="password">Select image type </label>
                     <select onchange="checkDisplay('APIimage');checkDisplay('uploadImg')"
                         class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " name=""
@@ -155,7 +152,7 @@
                         <option value="upload">Upload Profile Picture</option>
                     </select>
                 </div>
-                <div id="APIimage">
+                <div class="flex md:flex-row flex-col mt-10 space-x-1" id="APIimage">
                     <label class="text-white" for="password">Select</label>
                     <select class="p-2 md:ml-10 focus:outline-none  mt-10 rounded-lg h-[48px] md:w-[400px] " name=""
                         id="profile-pic">
