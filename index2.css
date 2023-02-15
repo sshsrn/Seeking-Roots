@@ -1,16 +1,15 @@
 :root{
     /* Hex values */
     --primary-light:#9064b4;
-    --primary-dark:#6100C2ff;
-    --priamry-accent: rgb(232, 232, 232);
+    --primary-dark:rgba(97, 0, 194, 0.601);
+    --priamry-accent: rgba(126, 124, 124, 0.772);
 }
 
 body{
-    background-color: var(--primary-light);
+    background: rgba(0, 0, 0, 0.208);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-   
 }
 
 .container{
@@ -19,6 +18,33 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 50px;
+    margin: 10px;
+    padding: 16px;
+    text-align: center;
+}
+.name{
+    margin-top: 0;
+}
+p {
+    margin-bottom: 5px;
+}
+
+h2 {
+    text-align: center;
 }
 
 .container .about-text{
@@ -39,24 +65,25 @@ body{
 }
 
 h1{
-    color:white;
+    color:rgb(82, 81, 81);
     font-family: 'Lato', sans-serif;
     font-weight: bold;
     font-size: 4.5rem;
 }
 
-p{
+.about{
     color:var(--priamry-accent);
     font-family: 'Lato', sans-serif;
     font-weight: normal;
     font-size: 1.4rem;
     line-height:1.6rem;
     width: 700px;
+    padding-right: 20px;
 }
 
 #circle{
-    width:600px;
-    height:600px;
+    width:400px;
+    height:400px;
     border-radius: 50%;
     background-color: var(--primary-dark);
     display: flex;
@@ -64,15 +91,15 @@ p{
     justify-content: center;
 }
 
-img{
-    height: 750px;
+.img{
+    height: 550px;
     width: auto;
 }
 
 
 #about-us{
     width: 100%;
-    background-color: pink;
+    background-color: rgb(60, 57, 58);
 
 }
 .footer{
