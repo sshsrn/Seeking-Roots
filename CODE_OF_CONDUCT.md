@@ -8,8 +8,7 @@ size, visible or invisible disability, ethnicity, sex characteristics, gender
 identity and expression, level of experience, education, socio-economic status,
 nationality, personal appearance, race, religion, or sexual identity
 and orientation.
-
-We pledge to act and interact in ways that contribute to an open, welcoming,
+   We pledge to act and interact in ways that contribute to an open, welcoming,
 diverse, inclusive, and healthy community.
 
 ## Our Standards
@@ -123,6 +122,8 @@ enforcement ladder](https://github.com/mozilla/diversity).
 
 [homepage]: https://www.contributor-covenant.org
 
-For answers to common questions about this code of conduct, see the FAQ at
-https://www.contributor-covenant.org/faq. Translations are available at
-https://www.contributor-covenant.org/translations.
+For answers to common questions about this code of conduct.
+see the FAQ at
+[click](https://www.contributor-covenant.org/faq). 
+Translations are available at
+[here](https://www.contributor-covenant.org/translations).
