@@ -6,7 +6,7 @@ body{
     /* background-color:#fefefe; */
     /* background: rgb(2,0,36); */
       /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(204, 3, 3) 16%, rgb(0, 89, 255) 100%);  */
-      background:  rgba(241, 230, 143, 0.792) ;
+      background:  rgba(44, 239, 229, 0.792) ;
 
 }
 .nav-bar{
@@ -14,17 +14,17 @@ body{
     padding: 10px;
     box-shadow: 0 3px 5px rgb(0 0 0 / 40%);
     background: linear-gradient(to bottom right, #000000 0%, #01110c 100%);
-    border-bottom: 2px rgb(60, 204, 201) solid;
-    border-top: 2px rgb(228, 86, 231) solid;
+    border-bottom: 2px rgb(134, 153, 198) solid;
+    border-top: 2px rgb(171, 16, 111) solid;
     
 }
 .nav-bar a {
-    color: rgb(219, 194, 194);
+    color: rgb(109, 223, 22);
     font-size: 15px;
     padding: 7px;
     text-decoration: none;
     margin: 20px;  
-    border: 2px solid rgb(167, 236, 153);
+    border: 2px solid rgb(126, 4, 37);
     border-radius: 5px;
    
  
@@ -32,16 +32,14 @@ body{
     
 }
 .nav-bar a:hover{
-    background-color: white;
-    color: black;
+    background-color: rgb(68, 194, 162);
+    color: rgb(188, 87, 87);
 }
 .nav-bar ul{
    padding: 10px;
   
 }
-.main-section{
-   
-}
+.main-section{}
 
 .image{
     /*  float: left;  */
@@ -59,22 +57,23 @@ body{
     font-size: 42px;
     font-weight: 900;
     text-align: left;
-    color: rgb(92, 6, 6);
+    color: rgba(150, 9, 96, 0.863);
     
      /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  */
-     font-family: cursive;
+     font-family: sans-serif;
+     font-style: inherit;
      
      
 
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.92);
+    text-shadow: 1px 1px 2px rgba(205, 135, 14, 0.92);
 }
 .heading p{
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-style: italic;
+   font-style: unset;
     font-size: 22px;
     
-    color: rgb(80, 5, 5);
+    color: rgb(156, 8, 23);
     padding-top: 25px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.92);
 }
