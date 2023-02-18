@@ -15,4 +15,27 @@
 #imageType > *:nth-child(1) {
     flex: 0 0 22%;
 }
-
+.h-screen{
+    background-color: aqua;
+}
+.signUpDiv{
+    background: linear-gradient(to bottom right, #141414 0%, #5b5d69 100%);
+}
+.border-2{
+    background: linear-gradient(to top right, #020105 0%, hsl(220, 1%, 41%) 100%);
+    
+}
+.font-white{
+    color: rgb(250, 248, 248);
+}
+.backcol{
+    background: linear-gradient(to bottom right, #817474 0%, #5b5d69 100%);
+    
+}
+.owncol{
+    color: #f1eff5;
+    border-width: 0.5px;
+}
+.blackcol{
+    color: #0c0c0c;
+}

@@ -17,7 +17,7 @@ ul{
 	list-style: none;
 }
 .footer{
-	background-color: #24262b;
+	background-color: rgb(42 43 48);
     padding: 50px;
     height: 190px;
   
@@ -78,3 +78,4 @@ ul{
 	color: #24262b;
 	background-color: #ffffff;
 }
+

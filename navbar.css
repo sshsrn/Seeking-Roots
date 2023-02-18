@@ -11,9 +11,9 @@ html{
 .navbar{
  box-shadow: 0 0.1rem 0.3rem rgb(0 0 0 / 30%);
  box-shadow: 0 3px 5px rgb(0 0 0 / 40%);
-    background: linear-gradient(to bottom right, #041c40 0%, #0b1a62 100%);
-    border-bottom: 2px white solid;
-    border-top: 2px white solid;
+    background: linear-gradient(to bottom right, #141414 0%, #383a46 100%);
+    /* border-bottom: 2px white solid;
+    border-top: 2px white solid; */
  
 }
 .navbar ul li a{
@@ -30,4 +30,16 @@ html{
     width: 46px;
     border-radius: 27px;
     margin-left: 32px;
+}
+.navitem{
+    /* background-color: white; */
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 20px;
+}
+.navitem:hover{
+    background-color: rgb(14, 13, 13);
+    color: #bdb5b5;
 }
