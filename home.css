@@ -14,17 +14,17 @@ body{
     padding: 10px;
     box-shadow: 0 3px 5px rgb(0 0 0 / 40%);
     background: linear-gradient(to bottom right, #000000 0%, #01110c 100%);
-    border-bottom: 2px white solid;
-    border-top: 2px white solid;
+    border-bottom: 2px rgb(60, 204, 201) solid;
+    border-top: 2px rgb(228, 86, 231) solid;
     
 }
 .nav-bar a {
-    color: white;
+    color: rgb(219, 194, 194);
     font-size: 15px;
     padding: 7px;
     text-decoration: none;
     margin: 20px;  
-    border: 2px solid white;
+    border: 2px solid rgb(167, 236, 153);
     border-radius: 5px;
    
  
