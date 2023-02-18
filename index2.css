@@ -39,7 +39,7 @@ body{
 }
 
 h1{
-    color:white;
+    color:rgb(183, 180, 180);
     font-family: 'Lato', sans-serif;
     font-weight: bold;
     font-size: 4.5rem;
@@ -52,7 +52,7 @@ p{
     font-size: 1.4rem;
     line-height:1.6rem;
     width: 700px;
-    color:black
+    color:rgb(37, 11, 72)
 }
 
 #circle{
