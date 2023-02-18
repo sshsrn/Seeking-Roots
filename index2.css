@@ -1,8 +1,8 @@
 :root{
     /* Hex values */
-    --primary-light:#9064b4;
-    --primary-dark:#6100C2ff;
-    --priamry-accent: rgb(232, 232, 232);
+    --primary-light:#a20ec0;
+    --primary-dark:rgb(243, 208, 242);
+    --priamry-accent: rgb(177, 13, 92);
 }
 
 body{
