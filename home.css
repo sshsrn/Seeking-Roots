@@ -3,12 +3,14 @@
     padding: 0%;
 }
 body{
-    background-color:#fefefe;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(204, 3, 3) 16%, rgb(0, 89, 255) 100%);
+    /* background-color:#fefefe; */
+    /* background: rgb(2,0,36); */
+      /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(204, 3, 3) 16%, rgb(0, 89, 255) 100%);  */
+      background:  rgba(241, 230, 143, 0.792) ;
+
 }
 .nav-bar{
-    background-color: black;
+    background-color: rgb(92, 6, 6); 
     padding: 10px;
     box-shadow: 0 3px 5px rgb(0 0 0 / 40%);
     background: linear-gradient(to bottom right, #000000 0%, #01110c 100%);
@@ -42,7 +44,8 @@ body{
 }
 
 .image{
-    float: left;
+    /*  float: left;  */
+    text-align: center;
     
 }
 .heading{
@@ -56,16 +59,22 @@ body{
     font-size: 42px;
     font-weight: 900;
     text-align: left;
-    color: white;
+    color: rgb(92, 6, 6);
     
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  */
+     font-family: cursive;
+     
+     
+
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.92);
 }
 .heading p{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
     font-size: 22px;
     
-    color: rgb(255, 255, 255);
+    color: rgb(80, 5, 5);
     padding-top: 25px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.92);
 }
