@@ -6,28 +6,11 @@
 }
 
 body{
-    background-color: var(--primary-light);
+    /* background-color: var(--primary-light); */
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-   
-}
-
-.container{
-    height:100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.container .about-text{
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    background:  rgba(44, 239, 229, 0.792) !important ;
 }
 
 .container .about-image{
@@ -38,7 +21,7 @@ body{
     justify-content:start;
 }
 
-h1{
+/* h1{
     color:rgb(183, 180, 180);
     font-family: 'Lato', sans-serif;
     font-weight: bold;
@@ -53,20 +36,21 @@ p{
     line-height:1.6rem;
     width: 700px;
     color:rgb(37, 11, 72)
-}
+} */
 
 #circle{
-    width:600px;
-    height:600px;
+    width:400px;
+    height:400px;
     border-radius: 50%;
-    background-color: var(--primary-dark);
+    /* background-color: var(--primary-dark); */
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgb(177, 13, 92,0.4);
 }
 
 img{
-    height: 750px;
+    height: 550px;
     width: auto;
 }
 
@@ -78,4 +62,157 @@ img{
 }
 .footer{
   margin-top: auto;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height:90vh;
+    width: 100vw;
+    justify-content: center;
+}
+.about-text{
+    padding-right: 90px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.about-text h1{
+    color: rgba(150, 9, 96, 0.863);
+    margin-bottom: 8%;
+    font-style: unset;
+    font-family: sans-serif;
+    font-style: inherit;
+    text-shadow: 1px 1px 2px rgba(205, 135, 14, 0.92);
+    font-weight: 900;
+    
+}
+
+.about-text p{
+    color: rgb(156, 8, 23);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.92);
+    text-align: justify;
+    letter-spacing: 2.6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: unset;
+    font-size: 21px;  
+}
+
+.navbar{
+    background-color: rgb(92, 6, 6); 
+    padding: 10px;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 40%);
+    background: linear-gradient(to bottom right, #000000 0%, #01110c 100%);
+    border-bottom: 2px rgb(134, 153, 198) solid;
+    border-top: 2px rgb(171, 16, 111) solid;
+        
+}
+
+.nav-link {
+    color: rgb(109, 223, 22) !important;
+    font-size: 12px;
+    padding: 7px;
+    text-decoration: none;
+    margin: 10px;  
+    border: 2px solid rgb(126, 4, 37);
+    border-radius: 5px; 
+}
+.nav-link:hover{
+    background-color: rgb(68, 194, 162);
+    color: rgb(188, 87, 87) !important;
+}
+
+
+.animated{
+    -webkit-animation-duration:4s;
+    animation-duration:4s;
+    -webkit-animation-fill-mode:both;
+    animation-fill-mode:both
+}
+.animated_head{
+    -webkit-animation-duration:8s;
+    animation-duration:8s;
+    -webkit-animation-fill-mode:both;
+    animation-fill-mode:both
+}
+
+@-webkit-keyframes fadeInRight{
+    0%{
+        opacity:0;
+        -webkit-transform:translateX(100px);
+        transform:translateX(100px)}
+    100%{
+        opacity:1;
+        -webkit-transform:translateX(0);
+        transform:translateX(0)
+    }
+}
+@keyframes fadeInRight{
+    0%{
+        opacity:0;
+        -webkit-transform:translateX(100px);
+        -ms-transform:translateX(100px);
+        transform:translateX(100px)}
+    100%{
+        opacity:1;
+        -webkit-transform:translateX(0);
+        -ms-transform:translateX(0);
+        transform:translateX(0)
+    }
+}
+.fadeInRight{
+    -webkit-animation-name:fadeInRight;
+    animation-name:fadeInRight
+}
+
+@-webkit-keyframes fadeInLeft{
+    0%{
+        opacity:0;
+        -webkit-transform:translateX(-100px);
+        transform:translateX(-100px)}
+    100%{
+        opacity:1;
+        -webkit-transform:translateX(0);
+        transform:translateX(0)
+    }
+}
+@keyframes fadeInLeft{
+    0%{
+        opacity:0;
+        -webkit-transform:translateX(-100px);
+        -ms-transform:translateX(-100px);
+        transform:translateX(-100px)}
+    100%{
+        opacity:1;
+        -webkit-transform:translateX(0);
+        -ms-transform:translateX(0);
+        transform:translateX(0)
+    }
+}
+.fadeInLeft{
+    -webkit-animation-name:fadeInLeft;
+    animation-name:fadeInLeft
+}
+
+@-webkit-keyframes fadeIn{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+@keyframes fadeIn{
+    0%{
+        opacity:0;}
+    100%{
+        opacity:1;
+
+    }
+}
+.fadeIn{
+    -webkit-animation-name:fadeIn;
+    animation-name:fadeIn
 }
