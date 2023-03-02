@@ -6,25 +6,35 @@ footer *{
     font-family: 'Baloo 2', cursive;
 }
 .container{
-	max-width: 1170px;
-	margin:auto;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
 }
 .row{
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
 }
 ul{
 	list-style: none;
 }
+
 .footer{
-	background-color: rgb(42 43 48);
+	background-color: rgb(7, 47, 244);
     padding: 50px;
     height: 190px;
-  
+	width: 100%;
+	display: flex;
+	flex-direction: row;
 }
+
 .footer-col{
-   width: 25%;
-   padding: 0 15px;
+   width: 10%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
 }
 .footer-col h4{
 	font-size: 18px;
