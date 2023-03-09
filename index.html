@@ -24,19 +24,30 @@
     <link rel="stylesheet" href="style.css">
     <!-- navbar css -->
     <link rel="stylesheet" href="navbar.css">
-   
+
     <!-- footer css -->
     <link rel="stylesheet" href="footer.css">
     <title>SignUp LogIn page</title>
-     <link rel="icon" type="image" href="large_seekingroots.png">
+    <link rel="icon" type="image" href="large_seekingroots.png">
+    <style>
+        element.style {}
 
+        .goog-te-gadget .goog-te-combo {
+            margin: 4px 0;
+            color: black;
+        }
+
+        nav div a {
+            padding: 1rem;
+        }
+    </style>
 
 </head>
 
 <body>
     <!-- Navbar section start navbar-secondary bg-secondary -->
-    <nav class="navbar navbar-expand-lg  sticky-top" >
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg  sticky-top navbar-dark">
+        <div class="container-fluid" id="navbaritems">
             <a href="#"> <img src="./assets//images/logo1.jpg" class="logo" alt=""> </a>
             <a href="#" class="navitem"> Home </a>
             <a href="#" class="navitem"> About Us</a>
@@ -128,31 +139,35 @@
                 <center>
                     <h2 class="text-[48px] md:text-[50px] lg:text-[52px] text-white">SIGN UP</h2>
                 </center>
-                <p class="text-center font-white">Please fill in this form to create an account || All inputs are mandatory.</p>
+                <p class="text-center font-white">Please fill in this form to create an account || All inputs are
+                    mandatory.</p>
                 <!-- <img src="https://api.multiavatar.com/a.png" alt="" srcset=""> -->
                 <div class="flex md:flex-row flex-col mt-10">
                     <label class="text-white font-white" for="name"> Enter Name *</label>
                     <input type="text" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] backcol"
-                    required="required" id="s-name" name="name" placeholder="Enter Your Name">
-                    
+                        required="required" id="s-name" name="name" placeholder="Enter Your Name">
+
                 </div>
                 <ul class="rq">*Required Field</ul>
                 <div class="flex md:flex-row flex-col mt-10">
                     <label class="text-white" for="email"> Enter Email *</label>
-                    <input type="email" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] backcol"
-                        id="s-email" required="required" name="email" placeholder="Enter Your Email">
+                    <input type="email"
+                        class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] backcol" id="s-email"
+                        required="required" name="email" placeholder="Enter Your Email">
                 </div>
                 <ul class="rq">*Required Field</ul>
                 <div class="flex md:flex-row flex-col mt-10">
                     <label class="text-white" for="password"> Set a Password *</label>
-                    <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] backcol"
+                    <input type="password"
+                        class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] backcol"
                         required="required" id="s-password" placeholder="Enter your password" name="password">
-                        <i class="far fa-eye cursor-pointer p-5 text-white" id="togglePassword" onclick="toggleeye()"></i>
+                    <i class="far fa-eye cursor-pointer p-5 text-white" id="togglePassword" onclick="toggleeye()"></i>
                 </div>
-                
+
                 <div class="flex md:flex-row flex-col mt-10">
                     <label class="text-white" for="password"> Confirm Password*</label>
-                    <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] backcol"
+                    <input type="password"
+                        class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] backcol"
                         required="required" id="s-password" placeholder="Re-enter your password" name="password">
                 </div>
                 <div class="flex md:flex-row flex-col mt-10 font-white" class="owncol">
@@ -166,8 +181,8 @@
                 </div>
                 <div class="flex md:flex-row flex-col mt-10 font-white" id="APIimage">
                     <label class="text-white" for="password">Select *</label>
-                    <select class="p-2 md:ml-10 focus:outline-none  mt-10 rounded-lg h-[48px] md:w-[400px] backcol" name=""
-                        id="profile-pic">
+                    <select class="p-2 md:ml-10 focus:outline-none  mt-10 rounded-lg h-[48px] md:w-[400px] backcol"
+                        name="" id="profile-pic">
                         <option value="grav" class="blackcol">Gravatar</option>
                         <option value="rand" class="blackcol">Random Avatar</option>
                     </select>
@@ -178,22 +193,22 @@
                 <div class="mt-10">
                     <!-- <center><button id="signUp" type="submit" class="p-2 text-[32px] bg-blue-500 rounded-md"> Sign Up
                         </button></center> -->
-                        <center><a href="#_" id="signUp" type="submit"
-                        class="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
-                        <span
-                            class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
-                        <span
-                            class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
-                        <span
-                            class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                        <span
-                            class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                        <span
-                            class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
-                        <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
-                            Sign Up
-                        </span>
-                    </a></center>
+                    <center><a href="#_" id="signUp" type="submit"
+                            class="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
+                            <span
+                                class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
+                            <span
+                                class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                            <span
+                                class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
+                            <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
+                                Sign Up
+                            </span>
+                        </a></center>
                 </div>
                 <p class="mt-2 mb-4 text-[14px] text-gray-900">
                     <span class="font-white"> Already have an account? </span>
@@ -224,12 +239,10 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Language</h4>
                     <ul>
-                        <li><a href="#">English</a></li>
-                        <li><a href="#">Hindi</a></li>
+                        <div id="google_translate_element"></div>
                     </ul>
-                </div>               
+                </div>
             </div>
         </div>
     </footer>
@@ -469,6 +482,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
         crossorigin="anonymous"></script>
+
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+
 
 </body>
 
