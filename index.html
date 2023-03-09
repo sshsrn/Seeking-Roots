@@ -45,6 +45,11 @@
 </head>
 
 <body>
+       <!--------Preloader---------------->
+<div id="preloader" class="loader">
+    <img src="./assets/images/preloader.gif" class="w-50 " alt="" />
+  </div>
+<!-- ------------------------------- -->
     <!-- Navbar section start navbar-secondary bg-secondary -->
     <nav class="navbar navbar-expand-lg  sticky-top navbar-dark">
         <div class="container-fluid" id="navbaritems">
@@ -249,6 +254,15 @@
 
     <!-- footer section end -->
 
+    <!--------------Preloader Script---------------->
+   <script>
+    var loader = document.querySelector(".loader");
+    window.addEventListener("load", vanish);
+    function vanish() {
+      loader.classList.add("disappear");
+    }
+  </script>
+
     <!-- Firebase config -->
     <script type="module">
         // Import the functions you need from the SDKs you need
@@ -435,6 +449,7 @@
             }
         });
     </script>
+    
     <script>
 
         var selected;
