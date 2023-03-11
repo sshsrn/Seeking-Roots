@@ -15,9 +15,9 @@
 #imageType > *:nth-child(1) {
     flex: 0 0 22%;
 }
-.h-screen{
+/* .h-screen{
     background-color: aqua;
-}
+} */
 .signUpDiv{
     background: linear-gradient(to bottom right, #141414 0%, #5b5d69 100%);
 }
@@ -38,6 +38,26 @@
 }
 .blackcol{
     color: #0c0c0c;
+
+}
+#loginDiv{
+    background: linear-gradient(to bottom right, #141414 0%, #5b5d69 100%);
+    z-index:0;
+}
+/* .form-control{
+     background: linear-gradient(to bottom right, #817474 0%, #5b5d69 100%);
+} */
+.form-control:focus {
+    border-color: gray;
+    box-shadow: none;
+  }
+
+.togglePass {
+    position: absolute;
+    top: 40%;
+    right: .5rem;
+    cursor: pointer;
+    user-select: none;
 }
 .rq{
     color: red;
