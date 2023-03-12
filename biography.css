@@ -11,3 +11,18 @@ body{
     margin-left: 9%;
     background-color: wheat;
 }
+
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: white;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #2d2d2efa;
+    background-clip: content-box;
+    border: 2px solid transparent;
+    border-radius: 15px;
+  }
