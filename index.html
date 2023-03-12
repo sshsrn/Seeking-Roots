@@ -51,7 +51,7 @@
   </div>
 <!-- ------------------------------- -->
     <!-- Navbar section start navbar-secondary bg-secondary -->
-    <nav class="navbar navbar-expand-lg  sticky-top navbar-dark">
+    <nav class="navbar navbar-expand-lg  sticky-top navbar-light bg-white navbar-dark">
         <div class="container-fluid" id="navbaritems">
             <a href="#"> <img src="./assets//images/logo1.jpg" class="logo" alt=""> </a>
             <a href="#" class="navitem"> Home </a>
@@ -89,50 +89,41 @@
 
     <!-- Login div -->
     <div id="loginDiv" style="display: none;">
-        <div class="h-screen w-screen   bg-[#6100C2] pt-10">
-            <div
-                class="border-2 border-black  rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] lg:mr-[25%] mt-10 bg-[#8b62b5] ">
-                <h2 class="text-[48px] pl-[30%] md:text-[50px] lg:text-[52px] text-white">LOGIN</h2>
-                <div class="flex md:flex-row flex-col mt-10">
-                    <label class="text-white" for="username"> Enter your Email </label>
-                    <input class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px] " type="text"
-                        id="l-email" placeholder="Enter Your Email">
+        <div class="h-screen pt-5">
+            <div class="form-control container-lg border border-dark rounded-lg shadow-lg p-5 bg-white w-50 mb-2">
+                <h2 class="text-center text-capitalize fs-3 fw-bold text-success mb-4">LOGIN</h2>
+
+                <div class="form-outline form-floating mb-4">
+                    <input type="email" id="l-email" class="form-control" placeholder ="Email-address" />
+                    <label class="form-label" for="Email">Email address</label>
+            </div>
+
+                <div class="form-outline form-floating mb-3">
+                    <input type="password" id="l-password" class="form-control" placeholder="Password" />
+                        <i class="togglePass ms-1 fa fa-eye-slash cursor-pointer text-black  "  id="togglePassword" aria-hidden="t
+                        rue" onclick="toggleeyelogin()"></i>
+                      <label class="form-label" for="Password">Password</label>
+            </div>
+                    
+                <div class="row mb-4">
+                    <div class="col d-flex justify-content-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                          <label class="form-check-label" for="form2Example31"> Remember me </label>
+                        </div>
                 </div>
-                <div class="flex md:flex-row flex-col mt-10">
-                    <label class="text-white" for="password"> Enter your Password </label>
-                    <input type="password" class="p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[400px]"
-                        required="" id="l-password" placeholder="Enter Your Password">
+                    <div class="col">
+                        <a href="#!">Forgot password?</a>
+                    </div>
+               </div>
+                <button type="submit" class="btn btn-primary btn-block mb-4 text-center w-full text-gray-900 bg-blue-500 ">Sign in</button>
+                <div class="text-center">
+                    <p>Not a member? <a href="#" onclick="toggleSignupLogin()" class="text-purple text-decoration-none">Sign up</a></p>
+                        <p>or sign up with:</p>
+                    <button type="button" class="btn btn-link btn-floating mx-1">
+                        <i class="fab fa-google"></i>
+                    </button>
                 </div>
-                <div class=" flex-row mt-10 space-x-1">
-                    <i class="far text-white fa-eye cursor-pointer p-5" id="togglePassword" onclick="toggleeye()"></i>
-                    <i class="mt-3 text-white cursor-pointer">Show password</i>
-                </div>
-                <div class="mt-10">
-                    <center>
-                        <a href="#_" id="login" type="submit"
-                            class="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
-                            <span
-                                class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
-                            <span
-                                class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
-                            <span
-                                class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                            <span
-                                class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                            <span
-                                class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
-                            <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
-                                Login
-                            </span>
-                        </a>
-                    </center>
-                </div>
-                <p class="mt-2 mb-4 text-[14px] text-gray-900">
-                    <span> Not a member? </span>
-                    <a style="cursor: pointer;" onclick="toggleSignupLogin()">
-                        Sign up
-                    </a>
-                </p>
             </div>
         </div>
     </div>
@@ -477,6 +468,21 @@
                 x.type = "password";
                 y.type = "password";
             }
+        }
+
+        function toggleeyelogin(){
+            const togglePassword = document.querySelector("#togglePassword");
+            const lpassword = document.querySelector("#l-password");
+        
+           togglePassword.addEventListener("click", function () {
+
+            const ltype = lpassword.getAttribute("type") === "password" ? "text" : "password";
+            lpassword.setAttribute("type", ltype);
+
+            this.classList.toggle("fa-eye");
+            this.classList.toggle('fa-eye-slash');
+          });
+
         }
 
         function checkDisplay(x) {
