@@ -7,3 +7,18 @@ td{
     padding: 25px;
     border: 1px solid rgb(208, 5, 177);
 }
+
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: white;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #2d2d2efa;
+    background-clip: content-box;
+    border: 2px solid transparent;
+    border-radius: 15px;
+  }
