@@ -1,4 +1,24 @@
+# <div align="center"> Seeking Roots</div>
 
+<div align="center">
+ <p>
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=SSHSRN%2FSeeking-Roots%20&countColor=%23263759&style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/SSHSRN/Seeking-Roots?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/SSHSRN/Seeking-Roots?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/SSHSRN/Seeking-Roots?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/SSHSRN/Seeking-Roots?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/SSHSRN/Seeking-Roots?style=for-the-badge)
+![Github](https://img.shields.io/github/license/SSHSRN/Seeking-Roots?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/SSHSRN/Seeking-Roots?style=for-the-badge)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/SSHSRN/Seeking-Roots?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/SSHSRN/Seeking-Roots?style=for-the-badge)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/SSHSRN/Seeking-Roots?style=for-the-badge)
+  
+ </p>
+ </div>
 
 ![App Screenshot](https://d33wubrfki0l68.cloudfront.net/4e39c7238cdfd48eccdfb5e1835170ec52e5f614/bd0b1/assets/img/jwoc_logo_sticker.svg)
 
