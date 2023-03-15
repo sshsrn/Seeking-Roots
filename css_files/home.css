@@ -90,3 +90,17 @@ body{
     border: 2px solid transparent;
     border-radius: 15px;
   }
+
+  @media screen and (max-width:967px){
+    .image img{
+        width: 80%;
+    }
+    .nav-bar a{
+        font-size: 70%;
+        margin-right: -15px;
+    }
+    #google_translate_element select{
+        margin-left: 280px !important;
+        font-size: 80% !important;
+    }
+  }
