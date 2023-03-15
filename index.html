@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,6 @@
     <link rel="stylesheet" href="css_files/go_to_top.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="js_files/go_to_top.js"></script>
     <script>
         function toggle_visibility() {
@@ -46,47 +46,75 @@
 </head>
 
 <body>
-        <button class="gotop">
-      <img src="assets/images/upButton.png" alt="arrow up">
-  </button>
-       <!--------Preloader---------------->
-<div id="preloader" class="loader">
-    <img src="assets/images/preloader.gif" class="w-50 " alt="" />
-  </div>
-<!-- ------------------------------- -->
+    <button class="gotop">
+        <img src="assets/images/upButton.png" alt="arrow up">
+    </button>
+    <!--------Preloader---------------->
+    <div id="preloader" class="loader">
+        <img src="assets/images/preloader.gif" class="w-50 " alt="" />
+    </div>
+    <!-- ------------------------------- -->
     <!-- Navbar section start navbar-secondary bg-secondary -->
-    <nav class="navbar navbar-expand-lg  sticky-top navbar-light bg-white navbar-dark">
-        <div class="container-fluid" id="navbaritems">
-            <a href="#"> <img src="assets//images/logo1.jpg" class="logo" alt=""> </a>
-            <a href="#" class="navitem"> Home </a>
-            <a href="#" class="navitem"> About Us</a>
-            <a href="#" class="navitem"> Message </a>
-            <a href="#" class="navitem"> Contact </a>
-            <a href="#" class="navitem"> Sign In </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <nav class="relative flex w-full flex-wrap items-center justify-between bg-neutral-900 py-3 text-neutral-200 shadow-lg lg:flex-wrap lg:justify-start z-10"
+        data-te-navbar-ref>
+        <div class="flex w-full flex-wrap items-center justify-between px-6">
+            <button
+                class="block border-0 bg-transparent py-2 px-2.5 text-neutral-200 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
+                type="button" data-te-collapse-init data-te-target="#navbarSupportedContent4"
+                aria-controls="navbarSupportedContent4" aria-expanded="false" aria-label="Toggle navigation" id="navtoggler">
+                <span class="[&>svg]:w-7">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+                        <path fill-rule="evenodd"
+                            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto  mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/">Home</a>
+            <div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+                id="navbarSupportedContent4" data-te-collapse-item>
+                <a href="#"> <img src="assets//images/logo1.jpg" class="w-12 h-12 rounded-full" alt=""> </a>
+                <!-- Left links -->
+                <ul class="list-style-none mr-auto flex flex-col pl-0 lg:flex-row" data-te-navbar-nav-ref>
+                    <li class="p-2" data-te-nav-item-ref>
+                        <a class="text-white disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                            href="#" data-te-nav-link-ref>Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#loginDiv">Login</a>
+                    <li class="p-2" data-te-nav-item-ref>
+                        <a class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                            href="#" data-te-nav-link-ref>About Us</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#signUpDiv">Sign Up</a>
+                    <li class="p-2" data-te-nav-item-ref>
+                        <a class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                            href="#" data-te-nav-link-ref>Message</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index2.html">About Us</a>
+                    <li class="p-2" data-te-nav-item-ref>
+                        <a class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                            href="#" data-te-nav-link-ref>Contact</a>
                     </li>
-
-
-
+                    <li class="p-2" data-te-nav-item-ref>
+                        <a class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                            href="#" data-te-nav-link-ref>Sign In</a>
+                    </li>
                 </ul>
+                <!-- Left links -->
             </div>
+            
+        </div>
+        <!-- Collapsible wrapper -->
+        <!-- Mobile-Menu  -->
+
+        <div class="hidden mobile-menu ">
+            <a href="index.html"
+                class="block p-4 font-bold border-b-2 border-blue-500 border-opacity-0 cursor-pointer active">Home</a>
+            <a href="#"
+                class="block p-4 font-bold border-b-2 border-blue-500 border-opacity-0 cursor-pointer ">About Us
+                Chat</a>
+            <a href="./about_us.html"
+                class="block p-4 font-bold border-b-2 border-blue-500 border-opacity-0 cursor-pointer "> Message</a>
+            <a href="./contact.html" target="_blank"
+                class="block p-4 font-bold border-b-2 border-blue-500 border-opacity-0 cursor-pointer">Contact</a>
+            <a href="./contact.html" target="_blank"
+                class="block p-4 font-bold border-b-2 border-blue-500 border-opacity-0 cursor-pointer">Signin</a>
         </div>
     </nav>
     <!-- Navbar section end -->
@@ -98,32 +126,36 @@
                 <h2 class="text-center text-capitalize fs-3 fw-bold text-success mb-4">LOGIN</h2>
 
                 <div class="form-outline form-floating mb-4">
-                    <input type="email" id="l-email" class="form-control" placeholder ="Email-address" />
+                    <input type="email" id="l-email" class="form-control" placeholder="Email-address" />
                     <label class="form-label" for="Email">Email address</label>
-            </div>
+                </div>
 
                 <div class="form-outline form-floating mb-3">
                     <input type="password" id="l-password" class="form-control" placeholder="Password" />
-                        <i class="togglePass ms-1 fa fa-eye-slash cursor-pointer text-black  "  id="togglePassword" aria-hidden="t
+                    <i class="togglePass ms-1 fa fa-eye-slash cursor-pointer text-black  " id="togglePassword"
+                        aria-hidden="t
                         rue" onclick="toggleeyelogin()"></i>
-                      <label class="form-label" for="Password">Password</label>
-            </div>
-                    
+                    <label class="form-label" for="Password">Password</label>
+                </div>
+
                 <div class="row mb-4">
                     <div class="col d-flex justify-content-center">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                          <label class="form-check-label" for="form2Example31"> Remember me </label>
+                            <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                            <label class="form-check-label" for="form2Example31"> Remember me </label>
                         </div>
-                </div>
+                    </div>
                     <div class="col">
                         <a href="#!">Forgot password?</a>
                     </div>
-               </div>
-                <button type="submit" class="btn btn-primary btn-block mb-4 text-center w-full text-gray-900 bg-blue-500 ">Sign in</button>
+                </div>
+                <button type="submit"
+                    class="btn btn-primary btn-block mb-4 text-center w-full text-gray-900 bg-blue-500 ">Sign
+                    in</button>
                 <div class="text-center">
-                    <p>Not a member? <a href="#" onclick="toggleSignupLogin()" class="text-purple text-decoration-none">Sign up</a></p>
-                        <p>or sign up with:</p>
+                    <p>Not a member? <a href="#" onclick="toggleSignupLogin()"
+                            class="text-purple text-decoration-none">Sign up</a></p>
+                    <p>or sign up with:</p>
                     <button type="button" class="btn btn-link btn-floating mx-1">
                         <i class="fab fa-google"></i>
                     </button>
@@ -139,7 +171,9 @@
                 <center>
                     <h2 class="text-[48px] md:text-[50px] lg:text-[52px] text-white">SIGN UP</h2>
                 </center>
-                <p class="text-center font-white p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[500px] backcol">Please fill in this form to create an account || All inputs are
+                <p
+                    class="text-center font-white p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[500px] backcol">
+                    Please fill in this form to create an account || All inputs are
                     mandatory.</p>
                 <!-- <img src="https://api.multiavatar.com/a.png" alt="" srcset=""> -->
                 <div class="flex md:flex-row flex-col mt-10">
@@ -248,22 +282,22 @@
     </footer>
 
     <!-- footer section end -->
-        <div class="scrollToTopContainer">
-      <button id="scrollToButton" class="HideElement scrollToTopButton" title="Click to scroll top">
-        <div class="top"><img src="assets/images/Chevron.svg" alt="Scroll-To-Top" /></div>
-      </button>
+    <div class="scrollToTopContainer">
+        <button id="scrollToButton" class="HideElement scrollToTopButton" title="Click to scroll top">
+            <div class="top"><img src="assets/images/Chevron.svg" alt="Scroll-To-Top" /></div>
+        </button>
     </div>
 
     <script src="js_files/go_to_top.js"></script>
 
     <!--------------Preloader Script---------------->
-   <script>
-    var loader = document.querySelector(".loader");
-    window.addEventListener("load", vanish);
-    function vanish() {
-      loader.classList.add("disappear");
-    }
-  </script>
+    <script>
+        var loader = document.querySelector(".loader");
+        window.addEventListener("load", vanish);
+        function vanish() {
+            loader.classList.add("disappear");
+        }
+    </script>
 
     <!-- Firebase config -->
     <script type="module">
@@ -451,7 +485,7 @@
             }
         });
     </script>
-    
+
     <script>
 
         var selected;
@@ -481,18 +515,18 @@
             }
         }
 
-        function toggleeyelogin(){
+        function toggleeyelogin() {
             const togglePassword = document.querySelector("#togglePassword");
             const lpassword = document.querySelector("#l-password");
-        
-           togglePassword.addEventListener("click", function () {
 
-            const ltype = lpassword.getAttribute("type") === "password" ? "text" : "password";
-            lpassword.setAttribute("type", ltype);
+            togglePassword.addEventListener("click", function () {
 
-            this.classList.toggle("fa-eye");
-            this.classList.toggle('fa-eye-slash');
-          });
+                const ltype = lpassword.getAttribute("type") === "password" ? "text" : "password";
+                lpassword.setAttribute("type", ltype);
+
+                this.classList.toggle("fa-eye");
+                this.classList.toggle('fa-eye-slash');
+            });
 
         }
 
@@ -522,7 +556,18 @@
             new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
         }
     </script>
+    <script>
+        // Hamburger Menu
 
+        const btn = document.getElementById('navtoggler');
+        const menu = document.querySelector('.mobile-menu')
+
+        // Adding event Listeners
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle("hidden");
+        })
+    </script>
 
 </body>
 
