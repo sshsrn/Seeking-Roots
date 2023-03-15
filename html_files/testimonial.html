@@ -10,10 +10,28 @@
     <link rel="stylesheet" href="../css_files/swiper-bundle.min.css">
 
     <link rel="stylesheet" href="../css_files/testimonial.css">
+    <link rel="stylesheet" href="../css_files/home.css">
+    <link rel="stylesheet" href="../css_files/translate.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter+Tight:ital,wght@1,300&display=swap" rel="stylesheet">
+   <link rel="icon" type="image" href="../assets/large_seekingroots.png">
 
 </head>
 
 <body>
+    <nav class="nav-bar">
+        <ul>
+            <li>
+                <a href="index.html">Login</a>
+                <a href="#">Sign-up</a>
+                <a href="About.html">About Us</a>
+                <a href="testimonial.html">Testimonial</a>
+                <div id="google_translate_element"></div>
+            </li>
+        </ul>
+        </nav>
     <div class="slide-container swiper">
         <h3>Testimonial</h3>
         <h2>-What People Think-</h2>
@@ -194,5 +212,17 @@
 
 <script src="../js_files/swiper-bundle.min.js"></script>
 <script src="../js_files/testimonial.js"></script>
+<script src="../js_files/translate.js"></script>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+          {pageLanguage: 'en'},
+          'google_translate_element'
+      );
+  }
+</script>
+<script type="text/javascript" src= "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 </html>

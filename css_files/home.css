@@ -31,6 +31,7 @@ body{
   
     
 }
+
 .nav-bar a:hover{
     background-color: rgb(68, 194, 162);
     color: rgb(188, 87, 87);
@@ -58,13 +59,9 @@ body{
     font-weight: 900;
     text-align: left;
     color: rgba(150, 9, 96, 0.863);
-    
      /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  */
      font-family: sans-serif;
      font-style: inherit;
-     
-     
-
     text-shadow: 1px 1px 2px rgba(205, 135, 14, 0.92);
 }
 .heading p{
