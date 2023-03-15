@@ -28,6 +28,6 @@ These are general rules that you should  follow when contributing to an Open Sou
 ### Aman Nanda - [Github](https://github.com/Aman1143)
 ### Jenny Pero - [GitHub](https://github.com/jennycpero)
 ### Sivaramakrishnan M -[Github](https://github.com/Siva20021)
-
+### Parwez Alam  -[Github](https://github.com/Parwez07)
 
 Thank you ❤
