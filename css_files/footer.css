@@ -23,7 +23,9 @@ ul{
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	
+
+	margin-bottom: 0;
+
 }
 
 

@@ -29,12 +29,16 @@ body{
 .about .title{
     position: relative;
     text-align: center;
-    font-size: 40px;
     font-weight: 700;
     margin-bottom: 80px;
     padding-bottom: 20px ;
-    font-family: 'Ubuntu',sans-serif;
-    color: rgb(171, 16, 111);
+    font-size: 45px;
+    font-weight: 900;
+    margin-top: -40px;
+    color: rgba(150, 9, 96, 0.863);
+     font-family: sans-serif;
+     font-style: inherit;
+    text-shadow: 1px 1px 2px rgba(205, 135, 14, 0.92);
 }
 .about .title::before{
     content:"";
@@ -43,18 +47,17 @@ body{
     left: 50%;
     width: 180px;
     height: 3px;
-    background: #111;
     transform: translateX(-50%);
 }
 .about .title::after{
-    content:"What we created";
+    content:" - What we created -";
     position: absolute;
-    bottom: -12px;
+    bottom: -7px;
     left: 50%;
     font-size: 20px;
     color: rgb(133, 187, 92);
     padding: 5px;
-    background: #fff;
+    background: transparent;
     transform: translateX(-50%);
 }
 .about .about-content{
@@ -62,13 +65,14 @@ body{
      flex-wrap: wrap;
      align-items: center;
      justify-content: space-between;
+     margin-top: -50px;
 }
 .about .about-content .left{
      width: 45%;
 }
 .about .about-content .left img{
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     object-fit: cover;
     border-radius: 6px;
 }
@@ -77,9 +81,15 @@ body{
 }
 
 .about  .about-content h1{
-    color:rgb(171, 16, 111);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: unset;
+     font-size: 28px;
+     color: rgb(156, 8, 23);
+     padding-top: 25px;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.92);
+     letter-spacing: 3px;
 }
 
 .about .about-content  h3{
@@ -90,8 +100,12 @@ body{
 
 .about .about-content .right p{
     text-align: justify;
-    color:rgb(156, 8, 23);
-    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: unset;
+     font-size: 16px;
+     color: rgb(156, 8, 23);
+     padding-top: 10px;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.92);
 }
 
 .about .about-content .right .first-content{
