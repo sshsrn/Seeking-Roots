@@ -17,17 +17,32 @@
 /* .h-screen{
     background-color: aqua;
 } */
-.signUpDiv {
+/* .signUpDiv {
   background: linear-gradient(to bottom right, #141414 0%, #5b5d69 100%);
-}
+} */
 .border-2 {
-  background: linear-gradient(to top right, #020105 0%, hsl(220, 1%, 41%) 100%);
-}
+  
+} 
 .font-white {
-  color: rgb(250, 248, 248);
+  /* color: rgb(250, 248, 248); */
+  color: black;
+
+}
+
+.loginhead{
+  color: rgba(150, 9, 96, 0.863) !important;
+     /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  */
+     font-family: sans-serif;
+     font-style: inherit;
+    text-shadow: 1px 1px 2px rgba(205, 135, 14, 0.92);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.text-white{
+  color: black !important;
 }
 .backcol {
-  background: linear-gradient(to bottom right, #817474 0%, #5b5d69 100%);
+  background: rgba(150, 9, 96, 0.1) 
 }
 .owncol {
   color: #f1eff5;
@@ -36,8 +51,14 @@
 .blackcol {
   color: #0c0c0c;
 }
+.form-label{
+  color: black;
+}
+
+
 #loginDiv {
-  background: linear-gradient(to bottom right, #141414 0%, #5b5d69 100%);
+  /* background: linear-gradient(to bottom right, #141414 0%, #5b5d69 100%); */
+  background:  rgba(44, 239, 229, 0.792) !important; 
   z-index: 0;
 }
 /* .form-control{
@@ -46,6 +67,10 @@
 .form-control:focus {
   border-color: gray;
   box-shadow: none;
+}
+
+.form-control{
+  background-color: rgba(150, 9, 96, 0.1) !important;
 }
 
 .togglePass {

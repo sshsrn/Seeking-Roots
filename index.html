@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,14 @@
     <link rel="stylesheet" href="css_files/go_to_top.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="js_files/go_to_top.js"></script>
+    <link rel="stylesheet" href="css_files/home.css">
+    <link rel="stylesheet" href="css_files/translate.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter+Tight:ital,wght@1,300&display=swap" rel="stylesheet">
+   <link rel="icon" type="image" href="../assets/large_seekingroots.png">
     <script>
         function toggle_visibility() {
             var touch = document.getElementById('pswd');
@@ -46,84 +53,78 @@
 </head>
 
 <body>
-        <button class="gotop">
-      <img src="assets/images/upButton.png" alt="arrow up">
-  </button>
-       <!--------Preloader---------------->
-<div id="preloader" class="loader">
-    <img src="assets/images/preloader.gif" class="w-50 " alt="" />
-  </div>
-<!-- ------------------------------- -->
+    <button class="gotop">
+        <img src="assets/images/upButton.png" alt="arrow up">
+    </button>
+    <!--------Preloader---------------->
+    <div id="preloader" class="loader">
+        <img src="assets/images/preloader.gif" class="w-50 " alt="" />
+    </div>
+    <!-- ------------------------------- -->
     <!-- Navbar section start navbar-secondary bg-secondary -->
-    <nav class="navbar navbar-expand-lg  sticky-top navbar-light bg-white navbar-dark">
-        <div class="container-fluid" id="navbaritems">
-            <a href="#"> <img src="assets//images/logo1.jpg" class="logo" alt=""> </a>
-            <a href="#" class="navitem"> Home </a>
-            <a href="#" class="navitem"> About Us</a>
-            <a href="#" class="navitem"> Message </a>
-            <a href="#" class="navitem"> Contact </a>
-            <a href="#" class="navitem"> Sign In </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto  mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#loginDiv">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#signUpDiv">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index2.html">About Us</a>
-                    </li>
 
+    <nav class="nav-bar">
+        <ul>
+            <li>
+                <a href="index.html">Login</a>
+                <a href="#">Sign-up</a>
+                <a href="html_files/About.html">About Us</a>
+                <a href="html_files/testimonial.html">Testimonial</a>
+                <div id="google_translate_element"></div>
+            </li>
+        </ul>
+        <script src="../js_files/translate.js"></script>
 
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+              new google.translate.TranslateElement(
+                  {pageLanguage: 'en'},
+                  'google_translate_element'
+              );
+          }
+      </script>
+      <script type="text/javascript" src= "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </nav>
 
-                </ul>
-            </div>
-        </div>
-    </nav>
     <!-- Navbar section end -->
 
     <!-- Login div -->
     <div id="loginDiv" style="display: none;">
         <div class="h-screen pt-5">
-            <div class="form-control container-lg border border-dark rounded-lg shadow-lg p-5 bg-white w-50 mb-2">
-                <h2 class="text-center text-capitalize fs-3 fw-bold text-success mb-4">LOGIN</h2>
+            <div class="form-control container-lg border border-dark rounded-lg shadow-lg p-5  w-50 mb-2">
+                <h2 class="text-center text-capitalize fs-3 fw-bold text-success mb-4 loginhead">LOGIN</h2>
 
                 <div class="form-outline form-floating mb-4">
-                    <input type="email" id="l-email" class="form-control" placeholder ="Email-address" />
+                    <input type="email" id="l-email" class="form-control" placeholder="Email-address" />
                     <label class="form-label" for="Email">Email address</label>
-            </div>
+                </div>
 
                 <div class="form-outline form-floating mb-3">
                     <input type="password" id="l-password" class="form-control" placeholder="Password" />
-                        <i class="togglePass ms-1 fa fa-eye-slash cursor-pointer text-black  "  id="togglePassword" aria-hidden="t
+                    <i class="togglePass ms-1 fa fa-eye-slash cursor-pointer text-black  " id="togglePassword"
+                        aria-hidden="t
                         rue" onclick="toggleeyelogin()"></i>
-                      <label class="form-label" for="Password">Password</label>
-            </div>
-                    
+                    <label class="form-label" for="Password">Password</label>
+                </div>
+
                 <div class="row mb-4">
                     <div class="col d-flex justify-content-center">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                          <label class="form-check-label" for="form2Example31"> Remember me </label>
+                            <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                            <label class="form-check-label" for="form2Example31"> Remember me </label>
                         </div>
-                </div>
+                    </div>
                     <div class="col">
                         <a href="#!">Forgot password?</a>
                     </div>
-               </div>
-                <button type="submit" class="btn btn-primary btn-block mb-4 text-center w-full text-gray-900 bg-blue-500 ">Sign in</button>
+                </div>
+                <button type="submit"
+                    class="btn btn-primary btn-block mb-4 text-center w-full text-gray-900 bg-blue-500 ">Sign
+                    in</button>
                 <div class="text-center">
-                    <p>Not a member? <a href="#" onclick="toggleSignupLogin()" class="text-purple text-decoration-none">Sign up</a></p>
-                        <p>or sign up with:</p>
+                    <p>Not a member? <a href="#" onclick="toggleSignupLogin()"
+                            class="text-purple text-decoration-none">Sign up</a></p>
+                    <p>or sign up with:</p>
                     <button type="button" class="btn btn-link btn-floating mx-1">
                         <i class="fab fa-google"></i>
                     </button>
@@ -137,9 +138,11 @@
         <div class="h-1000px w-screen shadow-xl pt-10">
             <div class="border-2 border-black rounded-lg shadow-md pl-10 pr-10 lg:ml-[25%] lg:mr-[25%]  ">
                 <center>
-                    <h2 class="text-[48px] md:text-[50px] lg:text-[52px] text-white">SIGN UP</h2>
+                    <h2 class="text-[48px] md:text-[50px] lg:text-[52px] text-white loginhead">SIGN UP</h2>
                 </center>
-                <p class="text-center font-white p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[500px] backcol">Please fill in this form to create an account || All inputs are
+                <p
+                    class="text-center font-white p-2 md:ml-10 focus:outline-none  rounded-lg h-[48px] md:w-[500px] backcol">
+                    Please fill in this form to create an account || All inputs are
                     mandatory.</p>
                 <!-- <img src="https://api.multiavatar.com/a.png" alt="" srcset=""> -->
                 <div class="flex md:flex-row flex-col mt-10">
@@ -226,15 +229,20 @@
             <div class="row">
                 <div class="footer-col">
                     <h4>More</h4>
-                    <ul>
+                    <ul class="first-ul">
                         <li><a href="#">about us</a></li>
                         <li><a href="#">our services</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>get help</h4>
+
+                    <ul class="second-ul">
+                        <li><a href="#">FAQ</a></li>
+
                     <ul>
                         <li><a href="faq.html">FAQ</a></li>
+
                         <li><a href="#">Email</a></li>
                     </ul>
                 </div>
@@ -248,22 +256,22 @@
     </footer>
 
     <!-- footer section end -->
-        <div class="scrollToTopContainer">
-      <button id="scrollToButton" class="HideElement scrollToTopButton" title="Click to scroll top">
-        <div class="top"><img src="assets/images/Chevron.svg" alt="Scroll-To-Top" /></div>
-      </button>
+    <div class="scrollToTopContainer">
+        <button id="scrollToButton" class="HideElement scrollToTopButton" title="Click to scroll top">
+            <div class="top"><img src="assets/images/Chevron.svg" alt="Scroll-To-Top" /></div>
+        </button>
     </div>
 
     <script src="js_files/go_to_top.js"></script>
 
     <!--------------Preloader Script---------------->
-   <script>
-    var loader = document.querySelector(".loader");
-    window.addEventListener("load", vanish);
-    function vanish() {
-      loader.classList.add("disappear");
-    }
-  </script>
+    <script>
+        var loader = document.querySelector(".loader");
+        window.addEventListener("load", vanish);
+        function vanish() {
+            loader.classList.add("disappear");
+        }
+    </script>
 
     <!-- Firebase config -->
     <script type="module">
@@ -451,7 +459,7 @@
             }
         });
     </script>
-    
+
     <script>
 
         var selected;
@@ -481,18 +489,18 @@
             }
         }
 
-        function toggleeyelogin(){
+        function toggleeyelogin() {
             const togglePassword = document.querySelector("#togglePassword");
             const lpassword = document.querySelector("#l-password");
-        
-           togglePassword.addEventListener("click", function () {
 
-            const ltype = lpassword.getAttribute("type") === "password" ? "text" : "password";
-            lpassword.setAttribute("type", ltype);
+            togglePassword.addEventListener("click", function () {
 
-            this.classList.toggle("fa-eye");
-            this.classList.toggle('fa-eye-slash');
-          });
+                const ltype = lpassword.getAttribute("type") === "password" ? "text" : "password";
+                lpassword.setAttribute("type", ltype);
+
+                this.classList.toggle("fa-eye");
+                this.classList.toggle('fa-eye-slash');
+            });
 
         }
 
@@ -522,7 +530,18 @@
             new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
         }
     </script>
+    <script>
+        // Hamburger Menu
 
+        const btn = document.getElementById('navtoggler');
+        const menu = document.querySelector('.mobile-menu')
+
+        // Adding event Listeners
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle("hidden");
+        })
+    </script>
 
 </body>
 

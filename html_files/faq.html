@@ -16,6 +16,20 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js_files/functional.js"></script>
+    <link rel="stylesheet" href="../css_files/home.css">
+    <link rel="stylesheet" href="../css_files/translate.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter+Tight:ital,wght@1,300&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="../css_files/style.css">
+   <!-- navbar css -->
+   <link rel="stylesheet" href="../css_files/navbar.css">
+
+   <!-- footer css -->
+   <link rel="stylesheet" href="../css_files/style.css">
+   <title>Faq's</title>
+   <link rel="icon" type="image" href="../assets/large_seekingroots.png">
     <script>
         function toggle_visibility() {
             var touch = document.getElementById('pswd');
@@ -31,18 +45,24 @@
         
      
             .containerf { 
-                font-family: Arial, sans-serif; 
+                /* font-family: Arial, sans-serif;  */
                 max-width: 800px; 
                 margin: 0 auto; 
-                padding: 20px; 
+                padding: 50px; 
              
             } 
      
            .containerf h1 { 
                 text-align: center; 
                 font-size: 36px; 
-                margin-bottom: 20px; 
+                margin-bottom: 100px; 
                 font-weight: bold; 
+                font-size: 42px;
+                font-weight: 900;
+                color: rgba(150, 9, 96, 0.863);
+                font-family: sans-serif;
+                font-style: inherit;
+                text-shadow: 1px 1px 2px rgba(205, 135, 14, 0.92);
             } 
      
             .question { 
@@ -69,6 +89,8 @@
             .answer { 
                 margin-bottom: 20px; 
                 display: none; 
+                color: rgb(156, 8, 23);
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.92);
             } 
      
             .answer p { 
@@ -80,14 +102,6 @@
                 display: block; 
             } 
         </style> 
-    <link rel="stylesheet" href="../css_files/style.css">
-    <!-- navbar css -->
-    <link rel="stylesheet" href="../css_files/navbar.css">
-
-    <!-- footer css -->
-    <link rel="stylesheet" href="../css_files/style.css">
-    <title>SignUp LogIn page</title>
-    <link rel="icon" type="image" href="../assets/large_seekingroots.png">
     <style>
         element.style {}
 
@@ -113,40 +127,26 @@
   </div>
 <!-- ------------------------------- -->
     <!-- Navbar section start navbar-secondary bg-secondary -->
-    <nav class="navbar navbar-expand-lg  sticky-top navbar-light bg-white navbar-dark">
-        <div class="container-fluid" id="navbaritems">
-            <a href="#"> <img src="../assets//images/logo1.jpg" class="logo" alt=""> </a>
-            <a href="#" class="navitem"> Home </a>
-            <a href="#" class="navitem"> About Us</a>
-            <a href="#" class="navitem"> Message </a>
-            <a href="#" class="navitem"> Contact </a>
-            <a href="#" class="navitem"> Sign In </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto  mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#loginDiv">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#signUpDiv">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index2.html">About Us</a>
-                    </li>
-
-
-
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <nav class="nav-bar">
+        <ul>
+            <li>
+                <a href="index.html">Login</a>
+                <a href="#">Sign-up</a>
+                <a href="About.html">About Us</a>
+                <a href="testimonial.html">Testimonial</a>
+                <div id="google_translate_element"></div>
+            </li>
+        </ul>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    {pageLanguage: 'en'},
+                    'google_translate_element'
+                );
+            }
+        </script>
+        <script type="text/javascript" src= "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </nav>
     <!-- Navbar section end -->
     <div class="containerf"> 
 		<strong><h1>Frequently Asked Questions</h1> </strong>
@@ -334,60 +334,6 @@
         });
     </script>
     
-    <script>
-
-        var selected;
-
-        function toggleSignupLogin() {
-            a = document.getElementById("signUpDiv");
-            b = document.getElementById("loginDiv");
-            if (a.style.display == "none") {
-                a.style.display = "block";
-                b.style.display = "none";
-            }
-            else {
-                a.style.display = "none";
-                b.style.display = "block";
-            }
-        }
-        function toggleeye() {
-            var x = document.getElementById("s-password");
-            var y = document.getElementById("l-password");
-            if (x.type === "password" || y.type === "password") {
-                x.type = "text";
-                y.type = "text";
-            }
-            else {
-                x.type = "password";
-                y.type = "password";
-            }
-        }
-
-        function toggleeyelogin(){
-            const togglePassword = document.querySelector("#togglePassword");
-            const lpassword = document.querySelector("#l-password");
-        
-           togglePassword.addEventListener("click", function () {
-
-            const ltype = lpassword.getAttribute("type") === "password" ? "text" : "password";
-            lpassword.setAttribute("type", ltype);
-
-            this.classList.toggle("fa-eye");
-            this.classList.toggle('fa-eye-slash');
-          });
-
-        }
-
-        function checkDisplay(x) {
-            var a = document.getElementById(x);
-            if (a.style.display === "none") {
-                a.style.display = "block";
-            }
-            else {
-                a.style.display = "none";
-            }
-        }
-    </script>
 
     <!-- bootstrap cdn link -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

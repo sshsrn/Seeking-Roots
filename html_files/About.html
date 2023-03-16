@@ -5,13 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css_files/About.css">
-    <title>Document</title>
+    <title>About Us</title>
+    <link rel="stylesheet" href="../css_files/home.css">
+    <link rel="stylesheet" href="../css_files/translate.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter+Tight:ital,wght@1,300&display=swap" rel="stylesheet">
+   <link rel="icon" type="image" href="../assets/large_seekingroots.png">
 </head>
 <body>
+    <nav class="nav-bar">
+        <ul>
+            <li>
+                <a href="index.html">Login</a>
+                <a href="#">Sign-up</a>
+                <a href="About.html">About Us</a>
+                <a href="testimonial.html">Testimonial</a>
+                <div id="google_translate_element"></div>
+            </li>
+        </ul>
+        </nav>
 
 <section class="about" id="about">
     <div class="max-width">
         <h2 class="title">About Us</h2>
+        
         <div class="about-content">
             <div class="column left">
                 <img src="../assets/images/about-us-people.png"  alt="My image">
@@ -28,6 +47,86 @@
         </div>
     </div>
 </section>
+
+<script src="../js_files/translate.js"></script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {pageLanguage: 'en'},
+            'google_translate_element'
+        );
+    }
+</script>
+<script type="text/javascript" src= "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+=======
+<section id="section_counter">
+    <div class="container3">
+      <div class="counter-grid">
+        <div class="counter-item">
+          <img src="images/web-design.png" alt="Users" class="counter-img" />
+          <h1 class="counter" data-target="1000" id="users">0</h1>
+        </div>
+        <div class="counter-item">
+          <img
+            src="images/web-development.png"
+            alt="People Benefitted"
+            class="counter-img"
+          /> 
+          <h1 class="counter" data-target="700" id="people_benefitted">0</h1>
+        </div>
+        <div class="counter-item">
+          <img src="images/ux-design.png" alt="Writings Published" class="counter-img" />
+          <h1 class="counter" data-target="499" id="articles_published">0</h1>
+        </div>
+      
+      </div>
+    </div>
+  </section>
+  <script>
+    let section_counter = document.querySelector('#section_counter');
+    let counters = document.querySelectorAll('.counter-item .counter');
+    
+    // Scroll Animation
+    
+    let CounterObserver = new IntersectionObserver(
+      (entries, observer) => {
+        let [entry] = entries;
+        if (!entry.isIntersecting) return;
+    
+        let speed = 200;
+        counters.forEach((counter, index) => {
+          function UpdateCounter() {
+            const targetNumber = +counter.dataset.target;
+            const initialNumber = +counter.innerText;
+            const incPerCount = targetNumber / speed;
+            if (initialNumber < targetNumber) {
+              counter.innerText = Math.ceil(initialNumber + incPerCount);
+              setTimeout(UpdateCounter, 40);
+            }
+          }
+          UpdateCounter();
+    
+          if (counter.parentElement.style.animation) {
+            counter.parentElement.style.animation = '';
+          } else {
+            counter.parentElement.style.animation = `slide-up 0.3s ease forwards ${
+              index / counters.length + 0.5
+            }s`;
+          }
+        });
+        observer.unobserve(section_counter);
+      },
+      {
+        root: null,
+        threshold: window.innerWidth > 768 ? 0.4 : 0.3,
+      }
+    );
+    
+    CounterObserver.observe(section_counter);
+      
+    </script>
 
 </body>
 </html>
