@@ -20,18 +20,11 @@
  </p>
  </div>
 
-![App Screenshot](https://d33wubrfki0l68.cloudfront.net/4e39c7238cdfd48eccdfb5e1835170ec52e5f614/bd0b1/assets/img/jwoc_logo_sticker.svg)
-
-# ❄JWOC
-JWoC (JGEC Winter of Code) is a coding event organised annually by JGEC which helps students to plunge into Open Source contribution and get the realm of Software Development.
-
-[Website](https://jwoc.tech/)
-
 ## License
 ### Every open source has a proper licence
 ##### MIT License
 
-Copyright (c) 2022 Kishan Kumar Rai
+Copyright (c) 2022 Srihari S
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
