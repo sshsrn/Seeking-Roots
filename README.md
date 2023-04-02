@@ -21,7 +21,6 @@
  </div>
 
 ## License
-### Every open source has a proper licence
 ##### MIT License
 
 Copyright (c) 2022 Srihari S
